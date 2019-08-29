@@ -1,12 +1,9 @@
 package tws.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import tws.entity.Employee;
 import tws.repository.EmployeeMapper;
 
@@ -26,8 +23,20 @@ public class EmployeeController {
     }
 
     @PostMapping("")
-    public ResponseEntity<Employee> insert(@RequestBody Employee employee) {
+    public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee) {
         employeeMapper.insert(employee);
         return ResponseEntity.created(URI.create("/employees/" + employee.getId())).body(employee);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Employee> updateEmployee(@PathVariable int id, @RequestBody Employee employee){
+        employeeMapper.update(id,employee);
+        return ResponseEntity.ok(employee);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteEmployee(@PathVariable int id) {
+        employeeMapper.deleteOne(id);
     }
 }
