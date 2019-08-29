@@ -1,5 +1,6 @@
 package tws.controller;
 
+import org.junit.After;
 import org.junit.Test;
 
 import static org.hamcrest.Matchers.containsString;
@@ -17,7 +18,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.jdbc.JdbcTestUtils;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
@@ -26,6 +29,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import tws.entity.Employee;
 import tws.entity.ParkingLot;
 
+import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,36 +43,63 @@ public class EmployeeControllerTest {
     @Autowired
     private ObjectMapper ObjectMapper;
 
+    JdbcTemplate jdbcTemplate;
+    JdbcTemplate jdbcParkingLot;
+
+    @Autowired
+    public void setDataSource(DataSource dataSource) {
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
+        this.jdbcParkingLot = new JdbcTemplate(dataSource);
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        JdbcTestUtils.deleteFromTables(jdbcTemplate, "employee");
+        JdbcTestUtils.deleteFromTables(jdbcParkingLot, "parkinglot");
+    }
+
+
     @Test
     public void shouldGetAllEmployeeWhenGetEmployees() throws Exception {
         //given
-        List<Employee> employees =  new ArrayList<>();
-        employees.add(new Employee(1, "yang", "32"));
-        employees.add(new Employee(2, "kathy", "22"));
-        String postString = ObjectMapper.writeValueAsString(employees);
-        //when
-        this.mockMvc.perform(get("/employees"))
+        jdbcTemplate.execute("INSERT INTO EMPLOYEE VALUES(1,'yang', '21');");
+        jdbcTemplate.execute("INSERT INTO EMPLOYEE VALUES(2,'zeqi', '25');");
+        List<Employee> employees = new ArrayList<>();
+        employees.add(new Employee(1,"yang","21"));
+        employees.add(new Employee(2,"zeqi","25"));
+        String getString = ObjectMapper.writeValueAsString(employees);
 
-                //then
+        //when
+        this.mockMvc.perform(
+                       get("/employees")
+        )
+
+        //then
                 .andDo(print()).andExpect(status().isOk())
                 .andExpect(
-                       content().json(postString)
+                       content().json(getString)
                 );
     }
 
         @Test
         public void shouldGetAllParkingLotsOneEmployeeWhenGetEmployees() throws Exception {
             //given
+            jdbcTemplate.execute("INSERT INTO EMPLOYEE VALUES(1,'yang', '21');");
+            jdbcTemplate.execute("INSERT INTO EMPLOYEE VALUES(2,'zeqi', '25');");
+            jdbcParkingLot.execute("INSERT INTO parkinglot VALUES(1 ,5 ,5 ,2);");
+            jdbcParkingLot.execute("INSERT INTO PARKINGLOT VALUES(2 ,6 ,2 ,1);");
+            jdbcParkingLot.execute("INSERT INTO PARKINGLOT VALUES(3 ,8 ,8 ,2);");
             List<ParkingLot> parkingLots =  new ArrayList<>();
-            parkingLots.add(new ParkingLot(2, 8,8, 2));
-            String postString = ObjectMapper.writeValueAsString(parkingLots);
+            parkingLots.add(new ParkingLot(1, 5,5, 2));
+            parkingLots.add(new ParkingLot(3, 8,8, 2));
+            String getString = ObjectMapper.writeValueAsString(parkingLots);
+
             //when
             this.mockMvc.perform(get("/employees/2/parkinglots"))
-
-                    //then
+            //then
                     .andDo(print()).andExpect(status().isOk())
                     .andExpect(
-                            content().json(postString)
+                            content().json(getString)
                     );
          }
 
@@ -99,7 +130,7 @@ public class EmployeeControllerTest {
         //when
         this.mockMvc.perform(
                 MockMvcRequestBuilders
-                        .put("/employees/4")
+                        .put("/employees/{id}",4)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(postString)
         )
@@ -108,5 +139,18 @@ public class EmployeeControllerTest {
                 .andExpect(
                         content().json(postString)
                 );
+    }
+
+    @Test
+    public void shouldDeleteOneEmployeeWhenDeleteEmployees() throws Exception {
+        //given
+
+        //when
+        this.mockMvc.perform(
+                MockMvcRequestBuilders
+                        .delete("/employees/{id}",2)
+        )
+                //then
+                .andDo(print()).andExpect(status().isOk());
     }
 }

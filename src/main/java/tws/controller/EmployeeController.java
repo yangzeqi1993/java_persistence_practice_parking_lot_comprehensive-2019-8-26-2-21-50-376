@@ -23,6 +23,11 @@ public class EmployeeController {
         return ResponseEntity.ok(employeeMapper.selectAll());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Employee> getOne(@PathVariable int id) {
+        return ResponseEntity.ok(employeeMapper.selectOne(id));
+    }
+
     @GetMapping("/{id}/parkinglots")
     public ResponseEntity<List<ParkingLot>> getOneParkingBoyAllParkingLots(@PathVariable int id) {
         return ResponseEntity.ok(employeeMapper.selectOneParkingBoyAllParkingLots(id));

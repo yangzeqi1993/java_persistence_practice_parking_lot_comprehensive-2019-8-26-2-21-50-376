@@ -9,12 +9,12 @@ CREATE TABLE `parkinglot` (
   `capacity` int(11) NOT NULL,
   `availablePositionCount` int(11) NOT NULL,
   `parkingBoyId` INTEGER NOT NULL,
-  FOREIGN KEY(parkingBoyId) REFERENCES employee(id)
+  --FOREIGN KEY(parkingBoyId) REFERENCES employee(id)
 );
 
-INSERT INTO `employee` VALUES ('1', 'yang', '32');
-INSERT INTO `employee` VALUES ('2', 'kathy', '22');
-
-INSERT INTO `parkinglot` VALUES ('1', '5', '5', '1');
-INSERT INTO `parkinglot` VALUES ('2', '8', '8', '2');
+-- INSERT INTO `employee` VALUES (1, 'yang', 32);
+-- INSERT INTO `employee` VALUES (2, 'kathy', 22);
+--
+-- INSERT INTO `parkinglot` VALUES (1 ,5 ,5 ,1);
+-- INSERT INTO `parkinglot` VALUES (2 ,8 ,8 ,2);
 
