@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tws.entity.Employee;
+import tws.entity.ParkingLot;
 import tws.repository.EmployeeMapper;
 
 import java.net.URI;
@@ -22,7 +23,13 @@ public class EmployeeController {
         return ResponseEntity.ok(employeeMapper.selectAll());
     }
 
+    @GetMapping("/{id}/parkinglots")
+    public ResponseEntity<List<ParkingLot>> getOneParkingBoyAllParkingLots(@PathVariable int id) {
+        return ResponseEntity.ok(employeeMapper.selectOneParkingBoyAllParkingLots(id));
+    }
+
     @PostMapping("")
+    @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee) {
         employeeMapper.insert(employee);
         return ResponseEntity.created(URI.create("/employees/" + employee.getId())).body(employee);

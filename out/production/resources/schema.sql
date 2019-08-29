@@ -5,11 +5,11 @@ CREATE TABLE employee (
 );
 
 CREATE TABLE `parkinglot` (
-  `parkinglot_id` INTEGER PRIMARY KEY,
-  `parkinglot_capasity` int(11) NOT NULL,
-  `parkinglot_available_position_count` int(11) NOT NULL,
-  `parkingboy_id` INTEGER NOT NULL,
-  FOREIGN KEY(parkingboy_id) REFERENCES employee(id)
+  `id` INTEGER PRIMARY KEY,
+  `capacity` int(11) NOT NULL,
+  `availablePositionCount` int(11) NOT NULL,
+  `parkingBoyId` INTEGER NOT NULL,
+  FOREIGN KEY(parkingBoyId) REFERENCES employee(id)
 );
 
 INSERT INTO `employee` VALUES ('1', 'yang', '32');

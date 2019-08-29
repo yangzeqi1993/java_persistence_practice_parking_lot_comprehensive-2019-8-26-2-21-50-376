@@ -1,7 +1,9 @@
 package tws.repository;
 
 import org.apache.ibatis.annotations.*;
+import org.springframework.http.ResponseEntity;
 import tws.entity.Employee;
+import tws.entity.ParkingLot;
 
 import java.util.List;
 
@@ -10,6 +12,9 @@ public interface EmployeeMapper {
 
     @Select("select * from employee;")
     List<Employee> selectAll();
+
+    @Select("select * from parkinglot where parkingBoyId = #{id};")
+    List<ParkingLot> selectOneParkingBoyAllParkingLots(@Param("id") int id);
 
     @Insert("insert into employee values (#{employee.id}, #{employee.name}, #{employee.age});")
    void insert(@Param("employee") Employee employee);

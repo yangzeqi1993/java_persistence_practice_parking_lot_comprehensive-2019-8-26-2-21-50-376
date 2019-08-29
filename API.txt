@@ -1,0 +1,83 @@
+// Story1: AC1
+POST：/parkingboys
+RequestBoy: 
+{
+ "id": 4,
+ "name": Lee",
+ "age": "19"
+}
+ResponseBody:
+ResponseCode: 201
+
+
+// Story1: AC2
+GET：/parkingboys
+RequestBoy: 
+ResponseBody:
+[
+	{
+	 "id": 1,
+	 "name": "Tom",
+	 "age": "22"
+	},
+	{
+	 "id": 2,
+	 "name": "Bob",
+	 "age": "25"
+	},
+	{
+	 "id": 3,
+	 "name": "Yang",
+	 "age": "21"
+	}
+]
+ResponseCode: 200
+
+
+// Story2: AC1
+POST：/parkinglots
+RequestBoy: 
+{
+ "id": 3,
+ "capacity": 10，
+ "availablePositionCount": 3
+}
+ResponseBody:
+ResponseCode: 201
+
+
+// Story2: AC2
+GET：/parkinglots
+RequestBoy: 
+ResponseBody:
+[
+	{
+	 "id": 1,
+	 "capacity": 5,
+	 "availablePositionCount": 3,
+	 "parkingBoysId": 1
+	},
+	{
+	 "id": 2,
+	 "capacity": 5,
+	 "availablePositionCount": 3，
+	 "parkingBoysId": 2
+	}
+]
+ResponseCode: 200
+
+
+
+// Story3: AC2
+POST：/parkingboys/1/parkinglots
+RequestBoy: 
+[
+	{
+	 "id": 1,
+	 "capacity": 5,
+	 "availablePositionCount": 3,
+	 "parkingBoysId": 1
+	}
+]
+ResponseBody:
+ResponseCode: 200

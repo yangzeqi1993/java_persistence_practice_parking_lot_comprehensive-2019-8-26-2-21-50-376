@@ -4,15 +4,15 @@ public class ParkingLot {
     private int id;
     private int capacity;
     private int availablePositionCount;
-    private int parkingBoysId;
+    private int parkingBoyId;
 
     public ParkingLot(){};
 
-    public ParkingLot(int id, int capacity, int availablePositionCount, int parkingBoysId){
+    public ParkingLot(int id, int capacity, int availablePositionCount, int parkingBoyId){
         this.id = id;
         this.capacity = capacity;
         this.availablePositionCount = availablePositionCount;
-        this.parkingBoysId = parkingBoysId;
+        this.parkingBoyId = parkingBoyId;
     }
 
     public void setId(int id) {
@@ -39,11 +39,11 @@ public class ParkingLot {
         return availablePositionCount;
     }
 
-    public void setParkingBoysId(int parkingBoysId) {
-        this.parkingBoysId = parkingBoysId;
+    public void setParkingBoyId(int parkingBoyId) {
+        this.parkingBoyId = parkingBoyId;
     }
 
-    public int getParkingBoysId() {
-        return parkingBoysId;
+    public int getParkingBoyId() {
+        return parkingBoyId;
     }
 }
