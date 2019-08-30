@@ -16,11 +16,7 @@ public class EmployeeService {
     private EmployeeMapper employeeMapper;
 
     public List<Employee> findAllEmployees(){
-        List<Employee> employees= employeeMapper.selectAll();
-        for(Employee employee : employees){
-            employee.setName("中原银行-" + employee.getName());
-        }
-        return employees;
+        return employeeMapper.selectAll();
     }
 
     public List<Employee> findAllEmployeesInPages(int pageNum, int pageSize){
@@ -39,15 +35,15 @@ public class EmployeeService {
         return employeeMapper.selectAllInOnePageBySql(startNum,pageSize);
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
 }
