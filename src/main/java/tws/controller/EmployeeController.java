@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import tws.entity.Employee;
 import tws.entity.ParkingLot;
 import tws.repository.EmployeeMapper;
+import tws.service.EmployeeService;
 
 import java.net.URI;
 import java.util.List;
@@ -18,9 +19,18 @@ public class EmployeeController {
     @Autowired
     private EmployeeMapper employeeMapper;
 
+    @Autowired
+    private EmployeeService employeeService;
+
     @GetMapping("")
-    public ResponseEntity<List<Employee>> getAll() {
-        return ResponseEntity.ok(employeeMapper.selectAll());
+    public ResponseEntity<List<Employee>> getInOnePage(@RequestParam (name="pageNum", required = false) Integer pageNum,
+                                                       @RequestParam(name="pageSize", required = false) Integer pageSize)
+    {
+        if(pageNum != null && pageSize != null){
+            return ResponseEntity.ok(employeeService.findAllEmployeesInPagesBySql(pageNum,pageSize));
+        } else {
+            return ResponseEntity.ok(employeeService.findAllEmployees());
+        }
     }
 
     @GetMapping("/{id}")

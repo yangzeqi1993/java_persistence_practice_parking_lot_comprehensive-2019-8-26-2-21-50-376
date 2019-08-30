@@ -1,6 +1,7 @@
 package tws.controller;
 
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.Matchers.containsString;
@@ -52,7 +53,7 @@ public class EmployeeControllerTest {
         this.jdbcParkingLot = new JdbcTemplate(dataSource);
     }
 
-    @After
+    @Before
     public void tearDown() throws Exception {
         JdbcTestUtils.deleteFromTables(jdbcTemplate, "employee");
         JdbcTestUtils.deleteFromTables(jdbcParkingLot, "parkinglot");
@@ -60,7 +61,7 @@ public class EmployeeControllerTest {
 
 
     @Test
-    public void shouldGetAllEmployeeWhenGetEmployees() throws Exception {
+    public void shouldGetAllEmployeesWhenGetEmployees() throws Exception {
         //given
         jdbcTemplate.execute("INSERT INTO EMPLOYEE VALUES(1,'yang', '21');");
         jdbcTemplate.execute("INSERT INTO EMPLOYEE VALUES(2,'zeqi', '25');");
@@ -81,6 +82,35 @@ public class EmployeeControllerTest {
                 );
     }
 
+
+    @Test
+    public void shouldGetEmployeesInOnePageWhenGetEmployees() throws Exception {
+        //given
+        jdbcTemplate.execute("INSERT INTO EMPLOYEE VALUES(1,'yang', '21');");
+        jdbcTemplate.execute("INSERT INTO EMPLOYEE VALUES(2,'zeqi', '25');");
+        jdbcTemplate.execute("INSERT INTO EMPLOYEE VALUES(3,'yang', '21');");
+        jdbcTemplate.execute("INSERT INTO EMPLOYEE VALUES(4,'zeqi', '25');");
+        List<Employee> employees = new ArrayList<>();
+        employees.add(new Employee(3,"yang","21"));
+        employees.add(new Employee(4,"zeqi","25"));
+        String getString = ObjectMapper.writeValueAsString(employees);
+
+        //when
+        this.mockMvc.perform(
+                MockMvcRequestBuilders
+                        .get("/employees")
+                        .param("pageNum","2")
+                        .param("pageSize","2")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(getString)
+        )
+                //then
+                .andDo(print()).andExpect(status().isOk())
+                .andExpect(
+                        content().json(getString)
+                );
+    }
+
         @Test
         public void shouldGetAllParkingLotsOneEmployeeWhenGetEmployees() throws Exception {
             //given
@@ -95,7 +125,8 @@ public class EmployeeControllerTest {
             String getString = ObjectMapper.writeValueAsString(parkingLots);
 
             //when
-            this.mockMvc.perform(get("/employees/2/parkinglots"))
+            this.mockMvc.perform(
+                    get("/employees/2/parkinglots"))
             //then
                     .andDo(print()).andExpect(status().isOk())
                     .andExpect(

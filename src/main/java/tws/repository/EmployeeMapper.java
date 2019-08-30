@@ -19,6 +19,9 @@ public interface EmployeeMapper {
     @Select("select * from parkinglot where parkingBoyId = #{id};")
     List<ParkingLot> selectOneParkingBoyAllParkingLots(@Param("id") int id);
 
+    @Select("select * from employee OFFSET #{startNum} ROWS FETCH NEXT #{pageSize} ROWS ONLY;;")
+    List<Employee> selectAllInOnePageBySql(@Param("startNum") int startNum,@Param("pageSize") int endNum);
+
     @Insert("insert into employee values (#{employee.id}, #{employee.name}, #{employee.age});")
     void insert(@Param("employee") Employee employee);
 
