@@ -2,6 +2,7 @@ package tws.repository;
 
 import org.apache.ibatis.annotations.Param;
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;
@@ -34,7 +35,7 @@ public class EmployeeMapperTest {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
-    @After
+    @Before
     public void tearDown() throws Exception {
         JdbcTestUtils.deleteFromTables(jdbcTemplate, "employee");
     }

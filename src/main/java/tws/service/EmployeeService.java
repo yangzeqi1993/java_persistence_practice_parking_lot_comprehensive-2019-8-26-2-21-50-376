@@ -4,6 +4,7 @@ import org.h2.util.New;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tws.entity.Employee;
+import tws.entity.ParkingLot;
 import tws.repository.EmployeeMapper;
 
 import java.util.ArrayList;
@@ -34,6 +35,28 @@ public class EmployeeService {
         int startNum = (pageNum-1) * pageSize;
         return employeeMapper.selectAllInOnePageBySql(startNum,pageSize);
     }
+
+    public Employee findOneEmployee(int id){
+        return employeeMapper.selectOne(id);
+    }
+
+    public List<ParkingLot> FindOneParkingBoyAllParkingLots(int id){
+        return employeeMapper.selectOneParkingBoyAllParkingLots(id);
+    }
+
+    public void addOneEmployee(Employee employee){
+        employeeMapper.insert(employee);
+    }
+
+    public void updateOneEmployee(int id, Employee employee){
+        employeeMapper.update(id,employee);
+    }
+
+    public void deleteOneEmployee(int id){
+        employeeMapper.deleteOne(id);
+    }
+
+
 
 
 

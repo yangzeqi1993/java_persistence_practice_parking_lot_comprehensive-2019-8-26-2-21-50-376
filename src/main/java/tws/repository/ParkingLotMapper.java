@@ -11,6 +11,9 @@ public interface ParkingLotMapper {
     @Select("select * from parkinglot;")
     List<ParkingLot> selectAll();
 
+    @Select("select * from parkinglot where where id = #{id};")
+    ParkingLot selectOne(@Param("id") int id);
+
     @Insert("insert into parkinglot values (#{parkinglot.id}, #{parkinglot.capacity}, #{parkinglot.availablePositionCount}, #{parkinglot.parkingBoyId});")
     void insert(@Param("parkinglot") ParkingLot parkinglot);
 

@@ -17,14 +17,11 @@ import java.util.List;
 public class EmployeeController {
 
     @Autowired
-    private EmployeeMapper employeeMapper;
-
-    @Autowired
     private EmployeeService employeeService;
 
     @GetMapping("")
-    public ResponseEntity<List<Employee>> getInOnePage(@RequestParam (name="pageNum", required = false) Integer pageNum,
-                                                       @RequestParam(name="pageSize", required = false) Integer pageSize)
+    public ResponseEntity<List<Employee>> getAllInOnePage(@RequestParam (name="pageNum", required = false) Integer pageNum,
+                                                          @RequestParam(name="pageSize", required = false) Integer pageSize)
     {
         if(pageNum != null && pageSize != null){
             return ResponseEntity.ok(employeeService.findAllEmployeesInPagesBySql(pageNum,pageSize));
@@ -35,30 +32,30 @@ public class EmployeeController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Employee> getOne(@PathVariable int id) {
-        return ResponseEntity.ok(employeeMapper.selectOne(id));
+        return ResponseEntity.ok(employeeService.findOneEmployee(id));
     }
 
     @GetMapping("/{id}/parkinglots")
     public ResponseEntity<List<ParkingLot>> getOneParkingBoyAllParkingLots(@PathVariable int id) {
-        return ResponseEntity.ok(employeeMapper.selectOneParkingBoyAllParkingLots(id));
+        return ResponseEntity.ok(employeeService.FindOneParkingBoyAllParkingLots(id));
     }
 
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee) {
-        employeeMapper.insert(employee);
+        employeeService.addOneEmployee(employee);
         return ResponseEntity.created(URI.create("/employees/" + employee.getId())).body(employee);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Employee> updateEmployee(@PathVariable int id, @RequestBody Employee employee){
-        employeeMapper.update(id,employee);
+        employeeService.updateOneEmployee(id,employee);
         return ResponseEntity.ok(employee);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void deleteEmployee(@PathVariable int id) {
-        employeeMapper.deleteOne(id);
+        employeeService.deleteOneEmployee(id);
     }
 }
