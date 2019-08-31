@@ -112,6 +112,5 @@ public class ParkingLotMapperTest {
         ParkingLot parkingLot = parkingLotMapper.selectOne(1);
         assertNull(parkingLot);
     }
-
-
+    
 }
