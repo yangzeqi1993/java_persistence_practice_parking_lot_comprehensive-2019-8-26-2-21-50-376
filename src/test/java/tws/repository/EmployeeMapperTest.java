@@ -22,7 +22,6 @@ import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @MybatisTest
-
 public class EmployeeMapperTest {
 
     @Autowired
@@ -47,8 +46,12 @@ public class EmployeeMapperTest {
         jdbcTemplate.execute("INSERT INTO EMPLOYEE VALUES(1,'zhangsan', '21');");
         // when
         List<Employee> employeeList = employeeMapper.selectAll();
+
         // then
         assertEquals(1, employeeList.size());
+        assertEquals(1, employeeList.get(0).getId());
+        assertEquals("zhangsan", employeeList.get(0).getName());
+        assertEquals("21", employeeList.get(0).getAge());
     }
 
     @Test
@@ -58,6 +61,7 @@ public class EmployeeMapperTest {
         jdbcTemplate.execute("INSERT INTO EMPLOYEE VALUES(1,'zhangsan', '21');");
         // when
         Employee employee = employeeMapper.selectOne(1);
+
         // then
         assertEquals(1, employee.getId());
         assertEquals("zhangsan", employee.getName());
@@ -84,25 +88,23 @@ public class EmployeeMapperTest {
         jdbcTemplate.execute("INSERT INTO EMPLOYEE VALUES(1,'zhangsan', '21');");
         // when
         employeeMapper.update(1, employee);
-        Employee employeeInsert = employeeMapper.selectOne(1);
+        Employee employeeUpdate = employeeMapper.selectOne(1);
         // then
-        assertEquals(employee.getName(), employeeInsert.getName());
-        assertEquals(employee.getAge(), employeeInsert.getAge());
+        assertEquals(employee.getId(), employeeUpdate.getId());
+        assertEquals(employee.getName(), employeeUpdate.getName());
+        assertEquals(employee.getAge(), employeeUpdate.getAge());
     }
 
     @Test
     public void shouldDeleteOneEmployee() {
         // given
         jdbcTemplate.execute("INSERT INTO EMPLOYEE VALUES(1,'zhangsan', 21);");
-        jdbcTemplate.execute("INSERT INTO EMPLOYEE VALUES(2, 'kathy', 22);");
         // when
         employeeMapper.deleteOne(1);
         Employee employee = employeeMapper.selectOne(1);
         // then
         assertNull(employee);
     }
-
-
 
 
 }

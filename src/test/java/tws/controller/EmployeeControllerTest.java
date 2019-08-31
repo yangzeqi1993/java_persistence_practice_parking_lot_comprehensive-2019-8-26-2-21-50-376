@@ -106,7 +106,27 @@ public class EmployeeControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(getString)
         )
-                //then
+
+        //then
+                .andDo(print()).andExpect(status().isOk())
+                .andExpect(
+                        content().json(getString)
+                );
+    }
+
+    @Test
+    public void shouldGetOneEmployeeWhenGetEmployee() throws Exception {
+        //given
+        jdbcTemplate.execute("INSERT INTO EMPLOYEE VALUES(2,'zeqi', '25');");
+        Employee employee = new Employee(2,"zeqi","25");
+        String getString = ObjectMapper.writeValueAsString(employee);
+
+        //when
+        this.mockMvc.perform(
+                get("/employees/{id}",2)
+        )
+
+        //then
                 .andDo(print()).andExpect(status().isOk())
                 .andExpect(
                         content().json(getString)

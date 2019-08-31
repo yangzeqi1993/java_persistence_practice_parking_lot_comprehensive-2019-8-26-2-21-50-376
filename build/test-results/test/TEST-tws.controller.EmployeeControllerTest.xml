@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tws.controller.EmployeeControllerTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2019-08-31T01:56:32" hostname="DESKTOP-D0N6JCS" time="0.36">
+  <properties/>
+  <testcase name="shouldGetEmployeesInOnePageWhenGetEmployees" classname="tws.controller.EmployeeControllerTest" time="0.25"/>
+  <testcase name="shouldUpdateOneEmployeeWhenPutEmployees" classname="tws.controller.EmployeeControllerTest" time="0.049"/>
+  <testcase name="shouldReturnNotFoundWhenGetErrorUrl" classname="tws.controller.EmployeeControllerTest" time="0.011"/>
+  <testcase name="shouldAddOneEmployeeWhenPostEmployees" classname="tws.controller.EmployeeControllerTest" time="0.009"/>
+  <testcase name="shouldGetAllEmployeesWhenGetEmployees" classname="tws.controller.EmployeeControllerTest" time="0.009"/>
+  <testcase name="shouldDeleteOneEmployeeWhenDeleteEmployees" classname="tws.controller.EmployeeControllerTest" time="0.008"/>
+  <testcase name="shouldReturnMethodNotAllowedWhenDeleteErrorUrl" classname="tws.controller.EmployeeControllerTest" time="0.011"/>
+  <testcase name="shouldGetOneEmployeeWhenGetEmployee" classname="tws.controller.EmployeeControllerTest" time="0.009"/>
+  <system-out><![CDATA[09:56:29.094 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class tws.controller.EmployeeControllerTest]
+09:56:29.101 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+09:56:29.107 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+09:56:29.127 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [tws.controller.EmployeeControllerTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+09:56:29.136 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [tws.controller.EmployeeControllerTest], using SpringBootContextLoader
+09:56:29.139 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [tws.controller.EmployeeControllerTest]: class path resource [tws/controller/EmployeeControllerTest-context.xml] does not exist
+09:56:29.139 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [tws.controller.EmployeeControllerTest]: class path resource [tws/controller/EmployeeControllerTestContext.groovy] does not exist
+09:56:29.140 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [tws.controller.EmployeeControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+09:56:29.140 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [tws.controller.EmployeeControllerTest]: EmployeeControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+09:56:29.183 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [tws.controller.EmployeeControllerTest]
+09:56:29.188 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding PropertySource 'systemProperties' with lowest search precedence
+09:56:29.189 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding PropertySource 'systemEnvironment' with lowest search precedence
+09:56:29.189 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [MapPropertySource@1770260129 {name='systemProperties', properties={java.runtime.name=Java(TM) SE Runtime Environment, sun.boot.library.path=D:\Java\jdk1.8.0_151\jre\bin, java.vm.version=25.151-b12, java.vm.vendor=Oracle Corporation, java.vendor.url=http://java.oracle.com/, path.separator=;, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, file.encoding.pkg=sun.io, user.script=, sun.java.launcher=SUN_STANDARD, user.country=CN, sun.os.patch.level=, java.vm.specification.name=Java Virtual Machine Specification, user.dir=E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376, java.runtime.version=1.8.0_151-b12, java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment, java.endorsed.dirs=D:\Java\jdk1.8.0_151\jre\lib\endorsed, os.arch=amd64, java.io.tmpdir=C:\Users\yang\AppData\Local\Temp\, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, user.variant=, os.name=Windows 10, sun.jnu.encoding=GBK, java.library.path=D:\Java\jdk1.8.0_151\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\yang\bin;D:\Git\mingw64\bin;D:\Git\usr\local\bin;D:\Git\usr\bin;D:\Git\usr\bin;D:\Git\mingw64\bin;D:\Git\usr\bin;C:\Users\yang\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;D:\Java\jdk1.8.0_151\bin;D:\Java\jdk1.8.0_151\jre\bin;D:\Git\cmd;D:\apache-maven-3.6.1\bin;D:\gradle-5.4.1\bin;D:\nodejs;D:\Yarn\bin;C:\Users\yang\AppData\Local\Yarn\Data\global\node_modules\.bin;D:\Git\usr\bin\vendor_perl;D:\Git\usr\bin\core_perl;., java.specification.name=Java Platform API Specification, java.class.version=52.0, org.gradle.native=false, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, os.version=10.0, user.home=C:\Users\yang, user.timezone=Asia/Shanghai, java.awt.printerjob=sun.awt.windows.WPrinterJob, file.encoding=GBK, java.specification.version=1.8, java.class.path=E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\build\classes\java\test;E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\build\resources\test;E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\build\classes\java\main;E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\build\resources\main;C:\Users\yang\.gradle\caches\modules-2\files-2.1\com.h2database\h2\1.4.197\bb391050048ca8ae3e32451b5a3714ecd3596a46\h2-1.4.197.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.mybatis.spring.boot\mybatis-spring-boot-starter\2.1.0\d1a1b96573ade19ce0cd536e15565d216b05ff83\mybatis-spring-boot-starter-2.1.0.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-web\2.0.3.RELEASE\41fd4180bea3813de8f3c602b5a126218360315b\spring-boot-starter-web-2.0.3.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.flywaydb\flyway-core\5.0.7\71b796e103987cf8f24068f1f5490fac8f8e1126\flyway-core-5.0.7.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.mybatis.spring.boot\mybatis-spring-boot-starter-test\2.1.0\f1b3aa1957f76d9fc08fb4bba6a4f2a3678e4d99\mybatis-spring-boot-starter-test-2.1.0.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-test\2.0.3.RELEASE\1c624b1cc217bac010abce7a28df8169af4a7fa0\spring-boot-starter-test-2.0.3.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-jdbc\2.0.3.RELEASE\4f5f3411692a0f5efb60f7f583bdfcf49199a3d4\spring-boot-starter-jdbc-2.0.3.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-json\2.0.3.RELEASE\2e389a8727588c549c28bb277f0f573f65554850\spring-boot-starter-json-2.0.3.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter\2.0.3.RELEASE\ffaa050dbd36b0441645598f1a7ddaf67fd5e678\spring-boot-starter-2.0.3.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.mybatis.spring.boot\mybatis-spring-boot-autoconfigure\2.1.0\9acb6ddd5c8e85c753c5e02c40143d80eec25d94\mybatis-spring-boot-autoconfigure-2.1.0.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.mybatis\mybatis\3.5.2\ecdede23e67304e1d47861851dc14cb53c0e369d\mybatis-3.5.2.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.mybatis\mybatis-spring\2.0.2\941968ebcb961c460cbb8f0e6fb165051905ca2f\mybatis-spring-2.0.2.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-tomcat\2.0.3.RELEASE\25a51a75bfb997b7b95d6760178ee3303863ec4b\spring-boot-starter-tomcat-2.0.3.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.hibernate.validator\hibernate-validator\6.0.10.Final\4236051a8d209c00f85e70918d5e26d9f3e5201e\hibernate-validator-6.0.10.Final.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework\spring-webmvc\5.0.7.RELEASE\751c871527ec7ff335ffc76f2e737e297c0a8d30\spring-webmvc-5.0.7.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework\spring-web\5.0.7.RELEASE\2e04c6c2922fbfa06b5948be14a5782db168b6ec\spring-web-5.0.7.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.mybatis.spring.boot\mybatis-spring-boot-test-autoconfigure\2.1.0\65fc40f01f8fc486159b23ce6fa2dd059f1d3b77\mybatis-spring-boot-test-autoconfigure-2.1.0.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-test-autoconfigure\2.0.3.RELEASE\54e7d2167f2b926bf16a0ef8b91b6bfbd43826e7\spring-boot-test-autoconfigure-2.0.3.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-test\2.0.3.RELEASE\5c9b4bb6cfce9ef6e53a0ff5fc4a7ff2867871d8\spring-boot-test-2.0.3.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\com.jayway.jsonpath\json-path\2.4.0\765a4401ceb2dc8d40553c2075eb80a8fa35c2ae\json-path-2.4.0.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\junit\junit\4.12\2973d150c0dc1fefe998f834810d68f278ea58ec\junit-4.12.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.assertj\assertj-core\3.9.1\c5ce126b15f28d56cd8f960c1a6a058b9c9aea87\assertj-core-3.9.1.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.mockito\mockito-core\2.15.0\b84bfbbc29cd22c9529409627af6ea2897f4fa85\mockito-core-2.15.0.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.hamcrest\hamcrest-library\1.3\4785a3c21320980282f9f33d0d1264a69040538f\hamcrest-library-1.3.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.hamcrest\hamcrest-core\1.3\42a25dc3219429f0e5d060061f71acb49bf010a0\hamcrest-core-1.3.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.skyscreamer\jsonassert\1.5.0\6c9d5fe2f59da598d9aefc1cfc6528ff3cf32df3\jsonassert-1.5.0.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework\spring-test\5.0.7.RELEASE\bcb7505a316ea34b7e9a7ae5d4921be5b475c02d\spring-test-5.0.7.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-autoconfigure\2.0.3.RELEASE\11bc4cc96b08fabad2b3186755818fa0b32d83f\spring-boot-autoconfigure-2.0.3.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot\2.0.3.RELEASE\b874870d915adbc3dd932e19077d3d45c8e54aa0\spring-boot-2.0.3.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework\spring-jdbc\5.0.7.RELEASE\9c78c6b9a6c603f6589b480e165939cde7bab7f9\spring-jdbc-5.0.7.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework\spring-context\5.0.7.RELEASE\243a23f8968de8754d8199d669780d683ab177bd\spring-context-5.0.7.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework\spring-aop\5.0.7.RELEASE\fdd0b6aa3c9c7a188c3bfbf6dfd8d40e843be9ef\spring-aop-5.0.7.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework\spring-tx\5.0.7.RELEASE\4ca59b21c61162adb146ad1b40c30b60d8dc42b8\spring-tx-5.0.7.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework\spring-beans\5.0.7.RELEASE\c1196cb3e56da83e3c3a02ef323699f4b05feedc\spring-beans-5.0.7.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework\spring-expression\5.0.7.RELEASE\ca01fb473f53dd0ee3c85663b26d5dc325602057\spring-expression-5.0.7.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework\spring-core\5.0.7.RELEASE\54b731178d81e66eca9623df772ff32718208137\spring-core-5.0.7.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.xmlunit\xmlunit-core\2.5.1\4ffdb346572a7356f7521cd3119ce5287d2e339d\xmlunit-core-2.5.1.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-logging\2.0.3.RELEASE\7caad34f01d2688919e15e09a90467963e3d5190\spring-boot-starter-logging-2.0.3.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\javax.annotation\javax.annotation-api\1.3.2\934c04d3cfef185a8008e7bf34331b79730a9d43\javax.annotation-api-1.3.2.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.yaml\snakeyaml\1.19\2d998d3d674b172a588e54ab619854d073f555b5\snakeyaml-1.19.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\com.zaxxer\HikariCP\2.7.9\a83113d2c091d0d0f853dad3217bd7df3beb6ae3\HikariCP-2.7.9.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.datatype\jackson-datatype-jdk8\2.9.6\456895fc91bf7180b216fead220373e6278230c9\jackson-datatype-jdk8-2.9.6.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.datatype\jackson-datatype-jsr310\2.9.6\ea54f6193d224e5e5732bbd4262327eb465397c2\jackson-datatype-jsr310-2.9.6.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.module\jackson-module-parameter-names\2.9.6\129acd77a4b6ee30d62d3a0899b1344c8ec2bff8\jackson-module-parameter-names-2.9.6.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.9.6\cfa4f316351a91bfd95cb0644c6a2c95f52db1fc\jackson-databind-2.9.6.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-websocket\8.5.31\6564e716b89de5eaa0dd234ae7989576503ddf3\tomcat-embed-websocket-8.5.31.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-core\8.5.31\f5adf7ed8c34aa005b22b6a2dc7b6796e10e9c79\tomcat-embed-core-8.5.31.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-el\8.5.31\3a536e1ac71b82627c3a7408eb38fa0704cb9034\tomcat-embed-el-8.5.31.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\javax.validation\validation-api\2.0.1.Final\cb855558e6271b1b32e716d24cb85c7f583ce09e\validation-api-2.0.1.Final.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.jboss.logging\jboss-logging\3.3.2.Final\3789d00e859632e6c6206adc0c71625559e6e3b0\jboss-logging-3.3.2.Final.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\com.fasterxml\classmate\1.3.4\3d5f48f10bbe4eb7bd862f10c0583be2e0053c6\classmate-1.3.4.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\net.minidev\json-smart\2.3\7396407491352ce4fa30de92efb158adb76b5b\json-smart-2.3.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-classic\1.2.3\7c4f3c474fb2c041d8028740440937705ebb473a\logback-classic-1.2.3.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-to-slf4j\2.10.0\f7e631ccf49cfc0aefa4a2a728da7d374c05bd3c\log4j-to-slf4j-2.10.0.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.slf4j\jul-to-slf4j\1.7.25\af5364cd6679bfffb114f0dec8a157aaa283b76\jul-to-slf4j-1.7.25.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.7.25\da76ca59f6a57ee3102f8f9bd9cee742973efa8a\slf4j-api-1.7.25.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy\1.7.11\f02857a4e2c66ccbe7aaad6100a0a6c461bce9b3\byte-buddy-1.7.11.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.7.11\b425a8933ca07edd03c6dbc8bc3b595fba9780de\byte-buddy-agent-1.7.11.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.objenesis\objenesis\2.6\639033469776fd37c08358c6b92a4761feb2af4b\objenesis-2.6.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\com.vaadin.external.google\android-json\0.0.20131108.vaadin1\fa26d351fe62a6a17f5cda1287c1c6110dec413f\android-json-0.0.20131108.vaadin1.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework\spring-jcl\5.0.7.RELEASE\699016ddf454c2c167d9f84ae5777eccadf54728\spring-jcl-5.0.7.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.9.0\7c10d545325e3a6e72e06381afe469fd40eb701\jackson-annotations-2.9.0.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.9.6\4e393793c37c77e042ccc7be5a914ae39251b365\jackson-core-2.9.6.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\net.minidev\accessors-smart\1.2\c592b500269bfde36096641b01238a8350f8aa31\accessors-smart-1.2.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-core\1.2.3\864344400c3d4d92dfeb0a305dc87d953677c03c\logback-core-1.2.3.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-api\2.10.0\fec5797a55b786184a537abd39c3fa1449d752d6\log4j-api-2.10.0.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm\5.0.4\da08b8cce7bbf903602a25a3a163ae252435795\asm-5.0.4.jar, user.name=yang, java.vm.specification.version=1.8, sun.java.command=worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 1', java.home=D:\Java\jdk1.8.0_151\jre, sun.arch.data.model=64, user.language=zh, java.specification.vendor=Oracle Corporation, awt.toolkit=sun.awt.windows.WToolkit, java.vm.info=mixed mode, java.version=1.8.0_151, java.ext.dirs=D:\Java\jdk1.8.0_151\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext, sun.boot.class.path=D:\Java\jdk1.8.0_151\jre\lib\resources.jar;D:\Java\jdk1.8.0_151\jre\lib\rt.jar;D:\Java\jdk1.8.0_151\jre\lib\sunrsasign.jar;D:\Java\jdk1.8.0_151\jre\lib\jsse.jar;D:\Java\jdk1.8.0_151\jre\lib\jce.jar;D:\Java\jdk1.8.0_151\jre\lib\charsets.jar;D:\Java\jdk1.8.0_151\jre\lib\jfr.jar;D:\Java\jdk1.8.0_151\jre\classes, java.vendor=Oracle Corporation, org.gradle.test.worker=1, file.separator=\, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, sun.io.unicode.encoding=UnicodeLittle, sun.cpu.endian=little, sun.desktop=windows, sun.cpu.isalist=amd64}}, SystemEnvironmentPropertySource@477704443 {name='systemEnvironment', properties={PATH=C:\Users\yang\bin;D:\Git\mingw64\bin;D:\Git\usr\local\bin;D:\Git\usr\bin;D:\Git\usr\bin;D:\Git\mingw64\bin;D:\Git\usr\bin;C:\Users\yang\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;D:\Java\jdk1.8.0_151\bin;D:\Java\jdk1.8.0_151\jre\bin;D:\Git\cmd;D:\apache-maven-3.6.1\bin;D:\gradle-5.4.1\bin;D:\nodejs;D:\Yarn\bin;C:\Users\yang\AppData\Local\Yarn\Data\global\node_modules\.bin;D:\Git\usr\bin\vendor_perl;D:\Git\usr\bin\core_perl, USERDOMAIN_ROAMINGPROFILE=DESKTOP-D0N6JCS, PKG_CONFIG_PATH=D:\Git\mingw64\lib\pkgconfig;D:\Git\mingw64\share\pkgconfig, MSYSTEM_PREFIX=D:/Git/mingw64, PROCESSOR_LEVEL=6, SYSTEMDRIVE=C:, CONFIG_SITE=D:/Git/mingw64/etc/config.site, SESSIONNAME=Console, ALLUSERSPROFILE=C:\ProgramData, PROCESSOR_ARCHITECTURE=AMD64, MSYSTEM_CHOST=x86_64-w64-mingw32, PS1=\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ , PSModulePath=C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules, =E:=E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376, MAVEN_HOME=D:\apache-maven-3.6.1, ORIGINAL_TEMP=C:/Users/yang/AppData/Local/Temp, PROGRAMFILES=C:\Program Files, DIRNAME=E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\, USERNAME=yang, PWD=E:/Program/TWoutline/0829/java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376, CMD_LINE_ARGS=build, ProgramFiles(x86)=C:\Program Files (x86), INFOPATH=D:\Git\usr\local\info;D:\Git\usr\share\info;D:\Git\usr\info;D:\Git\share\info, FPS_BROWSER_USER_PROFILE_STRING=Default, APP_HOME=E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\, DEFAULT_JVM_OPTS="-Xmx64m" "-Xms64m", PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC, SHELL=D:\Git\usr\bin\bash.exe, DriverData=C:\Windows\System32\Drivers\DriverData, OneDriveConsumer=C:\Users\yang\OneDrive, ORIGINAL_TMP=C:/Users/yang/AppData/Local/Temp, TMPDIR=C:\Users\yang\AppData\Local\Temp, WINDIR=C:\WINDOWS, ProgramData=C:\ProgramData, ProgramW6432=C:\Program Files, SSH_ASKPASS=D:/Git/mingw64/libexec/git-core/git-gui--askpass, HOMEPATH=\Users\yang, PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 12, GenuineIntel, PUBLIC=C:\Users\Public, MINGW_CHOST=x86_64-w64-mingw32, =::=::\, EXEPATH=D:\Git, SHLVL=1, _SKIP=2, LOCALAPPDATA=C:\Users\yang\AppData\Local, ORIGINAL_PATH=D:\Git\mingw64\bin;D:\Git\usr\bin;C:\Users\yang\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;D:\Java\jdk1.8.0_151\bin;D:\Java\jdk1.8.0_151\jre\bin;D:\Git\cmd;D:\apache-maven-3.6.1\bin;D:\gradle-5.4.1\bin;D:\nodejs;D:\Yarn\bin;C:\Users\yang\AppData\Local\Yarn\Data\global\node_modules\.bin, MANPATH=D:\Git\mingw64\local\man;D:\Git\mingw64\share\man;D:\Git\usr\local\man;D:\Git\usr\share\man;D:\Git\usr\man;D:\Git\share\man, MINGW_PACKAGE_PREFIX=mingw-w64-x86_64, USERDOMAIN=DESKTOP-D0N6JCS, FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer, LOGONSERVER=\\DESKTOP-D0N6JCS, JAVA_HOME=D:\Java\jdk1.8.0_151, PLINK_PROTOCOL=ssh, PROMPT=$P$G, TERM=xterm, LANG=zh_CN.UTF-8, GRADLE_HOME=D:\gradle-5.5.1, MINGW_PREFIX=D:/Git/mingw64, DISPLAY=needs-to-be-defined, MSYSTEM=MINGW64, OneDrive=C:\Users\yang\OneDrive, APPDATA=C:\Users\yang\AppData\Roaming, SYSTEMROOT=C:\WINDOWS, JAVA_EXE=D:\Java\jdk1.8.0_151/bin/java.exe, _=./gradlew.bat, OS=Windows_NT, COMPUTERNAME=DESKTOP-D0N6JCS, COMMONPROGRAMFILES=C:\Program Files\Common Files, COMSPEC=C:\WINDOWS\system32\cmd.exe, PROCESSOR_REVISION=8e0c, CLASSPATH=E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\\gradle\wrapper\gradle-wrapper.jar, CommonProgramW6432=C:\Program Files\Common Files, ACLOCAL_PATH=D:\Git\mingw64\share\aclocal;D:\Git\usr\share\aclocal, APP_BASE_NAME=gradlew, MSYSTEM_CARCH=x86_64, TEMP=C:\Users\yang\AppData\Local\Temp, HOSTNAME=DESKTOP-D0N6JCS, HOMEDRIVE=C:, USERPROFILE=C:\Users\yang, TMP=C:\Users\yang\AppData\Local\Temp, CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files, NUMBER_OF_PROCESSORS=8, HOME=C:\Users\yang}}]
+09:56:29.200 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved classpath location [tws/controller/] to resources [URL [file:/E:/Program/TWoutline/0829/java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376/build/classes/java/test/tws/controller/], URL [file:/E:/Program/TWoutline/0829/java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376/build/classes/java/main/tws/controller/]]
+09:56:29.201 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\build\classes\java\test\tws\controller]
+09:56:29.201 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\build\classes\java\test\tws\controller] for files matching pattern [E:/Program/TWoutline/0829/java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376/build/classes/java/test/tws/controller/*.class]
+09:56:29.203 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\build\classes\java\main\tws\controller]
+09:56:29.204 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\build\classes\java\main\tws\controller] for files matching pattern [E:/Program/TWoutline/0829/java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376/build/classes/java/main/tws/controller/*.class]
+09:56:29.204 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:tws/controller/*.class] to resources [file [E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\build\classes\java\test\tws\controller\EmployeeControllerTest.class], file [E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\build\classes\java\test\tws\controller\ParkingLotControllerTest.class], file [E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\build\classes\java\main\tws\controller\EmployeeController.class], file [E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\build\classes\java\main\tws\controller\ParkingLotController.class]]
+09:56:29.236 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved classpath location [tws/] to resources [URL [file:/E:/Program/TWoutline/0829/java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376/build/classes/java/test/tws/], URL [file:/E:/Program/TWoutline/0829/java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376/build/classes/java/main/tws/]]
+09:56:29.237 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\build\classes\java\test\tws]
+09:56:29.237 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\build\classes\java\test\tws] for files matching pattern [E:/Program/TWoutline/0829/java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376/build/classes/java/test/tws/*.class]
+09:56:29.237 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\build\classes\java\main\tws]
+09:56:29.238 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\build\classes\java\main\tws] for files matching pattern [E:/Program/TWoutline/0829/java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376/build/classes/java/main/tws/*.class]
+09:56:29.239 [Test worker] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:tws/*.class] to resources [file [E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\build\classes\java\main\tws\Application.class]]
+09:56:29.254 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\build\classes\java\main\tws\Application.class]
+09:56:29.255 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration tws.Application for test class tws.controller.EmployeeControllerTest
+09:56:29.367 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [tws.controller.EmployeeControllerTest]: using defaults.
+09:56:29.367 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+09:56:29.384 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4bb20c03, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1b39a5ea, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@77bfc444, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6597fcb5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3e9e2610, org.springframework.test.context.transaction.TransactionalTestExecutionListener@68dec2dc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@61cab667, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3be28cbf, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@74839375, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6ad5771b, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5e189da8, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@713065a0]
+09:56:29.386 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [tws.controller.EmployeeControllerTest]
+09:56:29.387 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [tws.controller.EmployeeControllerTest]
+09:56:29.387 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [tws.controller.EmployeeControllerTest]
+09:56:29.387 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [tws.controller.EmployeeControllerTest]
+09:56:29.390 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@847b80a testClass = EmployeeControllerTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@37687e8b testClass = EmployeeControllerTest, locations = '{}', classes = '{class tws.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@e7e8512, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@398783d4, [ImportsContextCustomizer@7d141505 key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3b2992b5, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@1aa2e718, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@42783ff7], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+09:56:29.391 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [tws.controller.EmployeeControllerTest]
+09:56:29.391 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [tws.controller.EmployeeControllerTest]
+09:56:29.407 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding PropertySource 'systemProperties' with lowest search precedence
+09:56:29.407 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding PropertySource 'systemEnvironment' with lowest search precedence
+09:56:29.407 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [MapPropertySource@175100777 {name='systemProperties', properties={java.runtime.name=Java(TM) SE Runtime Environment, sun.boot.library.path=D:\Java\jdk1.8.0_151\jre\bin, java.vm.version=25.151-b12, java.vm.vendor=Oracle Corporation, java.vendor.url=http://java.oracle.com/, path.separator=;, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, file.encoding.pkg=sun.io, user.script=, sun.java.launcher=SUN_STANDARD, user.country=CN, sun.os.patch.level=, java.vm.specification.name=Java Virtual Machine Specification, user.dir=E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376, java.runtime.version=1.8.0_151-b12, java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment, java.endorsed.dirs=D:\Java\jdk1.8.0_151\jre\lib\endorsed, os.arch=amd64, java.io.tmpdir=C:\Users\yang\AppData\Local\Temp\, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, user.variant=, os.name=Windows 10, sun.jnu.encoding=GBK, java.library.path=D:\Java\jdk1.8.0_151\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\yang\bin;D:\Git\mingw64\bin;D:\Git\usr\local\bin;D:\Git\usr\bin;D:\Git\usr\bin;D:\Git\mingw64\bin;D:\Git\usr\bin;C:\Users\yang\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;D:\Java\jdk1.8.0_151\bin;D:\Java\jdk1.8.0_151\jre\bin;D:\Git\cmd;D:\apache-maven-3.6.1\bin;D:\gradle-5.4.1\bin;D:\nodejs;D:\Yarn\bin;C:\Users\yang\AppData\Local\Yarn\Data\global\node_modules\.bin;D:\Git\usr\bin\vendor_perl;D:\Git\usr\bin\core_perl;., java.specification.name=Java Platform API Specification, java.class.version=52.0, org.gradle.native=false, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, os.version=10.0, user.home=C:\Users\yang, user.timezone=Asia/Shanghai, java.awt.printerjob=sun.awt.windows.WPrinterJob, file.encoding=GBK, java.specification.version=1.8, java.class.path=E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\build\classes\java\test;E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\build\resources\test;E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\build\classes\java\main;E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\build\resources\main;C:\Users\yang\.gradle\caches\modules-2\files-2.1\com.h2database\h2\1.4.197\bb391050048ca8ae3e32451b5a3714ecd3596a46\h2-1.4.197.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.mybatis.spring.boot\mybatis-spring-boot-starter\2.1.0\d1a1b96573ade19ce0cd536e15565d216b05ff83\mybatis-spring-boot-starter-2.1.0.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-web\2.0.3.RELEASE\41fd4180bea3813de8f3c602b5a126218360315b\spring-boot-starter-web-2.0.3.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.flywaydb\flyway-core\5.0.7\71b796e103987cf8f24068f1f5490fac8f8e1126\flyway-core-5.0.7.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.mybatis.spring.boot\mybatis-spring-boot-starter-test\2.1.0\f1b3aa1957f76d9fc08fb4bba6a4f2a3678e4d99\mybatis-spring-boot-starter-test-2.1.0.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-test\2.0.3.RELEASE\1c624b1cc217bac010abce7a28df8169af4a7fa0\spring-boot-starter-test-2.0.3.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-jdbc\2.0.3.RELEASE\4f5f3411692a0f5efb60f7f583bdfcf49199a3d4\spring-boot-starter-jdbc-2.0.3.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-json\2.0.3.RELEASE\2e389a8727588c549c28bb277f0f573f65554850\spring-boot-starter-json-2.0.3.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter\2.0.3.RELEASE\ffaa050dbd36b0441645598f1a7ddaf67fd5e678\spring-boot-starter-2.0.3.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.mybatis.spring.boot\mybatis-spring-boot-autoconfigure\2.1.0\9acb6ddd5c8e85c753c5e02c40143d80eec25d94\mybatis-spring-boot-autoconfigure-2.1.0.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.mybatis\mybatis\3.5.2\ecdede23e67304e1d47861851dc14cb53c0e369d\mybatis-3.5.2.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.mybatis\mybatis-spring\2.0.2\941968ebcb961c460cbb8f0e6fb165051905ca2f\mybatis-spring-2.0.2.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-tomcat\2.0.3.RELEASE\25a51a75bfb997b7b95d6760178ee3303863ec4b\spring-boot-starter-tomcat-2.0.3.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.hibernate.validator\hibernate-validator\6.0.10.Final\4236051a8d209c00f85e70918d5e26d9f3e5201e\hibernate-validator-6.0.10.Final.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework\spring-webmvc\5.0.7.RELEASE\751c871527ec7ff335ffc76f2e737e297c0a8d30\spring-webmvc-5.0.7.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework\spring-web\5.0.7.RELEASE\2e04c6c2922fbfa06b5948be14a5782db168b6ec\spring-web-5.0.7.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.mybatis.spring.boot\mybatis-spring-boot-test-autoconfigure\2.1.0\65fc40f01f8fc486159b23ce6fa2dd059f1d3b77\mybatis-spring-boot-test-autoconfigure-2.1.0.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-test-autoconfigure\2.0.3.RELEASE\54e7d2167f2b926bf16a0ef8b91b6bfbd43826e7\spring-boot-test-autoconfigure-2.0.3.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-test\2.0.3.RELEASE\5c9b4bb6cfce9ef6e53a0ff5fc4a7ff2867871d8\spring-boot-test-2.0.3.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\com.jayway.jsonpath\json-path\2.4.0\765a4401ceb2dc8d40553c2075eb80a8fa35c2ae\json-path-2.4.0.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\junit\junit\4.12\2973d150c0dc1fefe998f834810d68f278ea58ec\junit-4.12.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.assertj\assertj-core\3.9.1\c5ce126b15f28d56cd8f960c1a6a058b9c9aea87\assertj-core-3.9.1.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.mockito\mockito-core\2.15.0\b84bfbbc29cd22c9529409627af6ea2897f4fa85\mockito-core-2.15.0.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.hamcrest\hamcrest-library\1.3\4785a3c21320980282f9f33d0d1264a69040538f\hamcrest-library-1.3.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.hamcrest\hamcrest-core\1.3\42a25dc3219429f0e5d060061f71acb49bf010a0\hamcrest-core-1.3.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.skyscreamer\jsonassert\1.5.0\6c9d5fe2f59da598d9aefc1cfc6528ff3cf32df3\jsonassert-1.5.0.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework\spring-test\5.0.7.RELEASE\bcb7505a316ea34b7e9a7ae5d4921be5b475c02d\spring-test-5.0.7.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-autoconfigure\2.0.3.RELEASE\11bc4cc96b08fabad2b3186755818fa0b32d83f\spring-boot-autoconfigure-2.0.3.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot\2.0.3.RELEASE\b874870d915adbc3dd932e19077d3d45c8e54aa0\spring-boot-2.0.3.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework\spring-jdbc\5.0.7.RELEASE\9c78c6b9a6c603f6589b480e165939cde7bab7f9\spring-jdbc-5.0.7.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework\spring-context\5.0.7.RELEASE\243a23f8968de8754d8199d669780d683ab177bd\spring-context-5.0.7.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework\spring-aop\5.0.7.RELEASE\fdd0b6aa3c9c7a188c3bfbf6dfd8d40e843be9ef\spring-aop-5.0.7.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework\spring-tx\5.0.7.RELEASE\4ca59b21c61162adb146ad1b40c30b60d8dc42b8\spring-tx-5.0.7.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework\spring-beans\5.0.7.RELEASE\c1196cb3e56da83e3c3a02ef323699f4b05feedc\spring-beans-5.0.7.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework\spring-expression\5.0.7.RELEASE\ca01fb473f53dd0ee3c85663b26d5dc325602057\spring-expression-5.0.7.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework\spring-core\5.0.7.RELEASE\54b731178d81e66eca9623df772ff32718208137\spring-core-5.0.7.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.xmlunit\xmlunit-core\2.5.1\4ffdb346572a7356f7521cd3119ce5287d2e339d\xmlunit-core-2.5.1.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-logging\2.0.3.RELEASE\7caad34f01d2688919e15e09a90467963e3d5190\spring-boot-starter-logging-2.0.3.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\javax.annotation\javax.annotation-api\1.3.2\934c04d3cfef185a8008e7bf34331b79730a9d43\javax.annotation-api-1.3.2.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.yaml\snakeyaml\1.19\2d998d3d674b172a588e54ab619854d073f555b5\snakeyaml-1.19.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\com.zaxxer\HikariCP\2.7.9\a83113d2c091d0d0f853dad3217bd7df3beb6ae3\HikariCP-2.7.9.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.datatype\jackson-datatype-jdk8\2.9.6\456895fc91bf7180b216fead220373e6278230c9\jackson-datatype-jdk8-2.9.6.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.datatype\jackson-datatype-jsr310\2.9.6\ea54f6193d224e5e5732bbd4262327eb465397c2\jackson-datatype-jsr310-2.9.6.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.module\jackson-module-parameter-names\2.9.6\129acd77a4b6ee30d62d3a0899b1344c8ec2bff8\jackson-module-parameter-names-2.9.6.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.9.6\cfa4f316351a91bfd95cb0644c6a2c95f52db1fc\jackson-databind-2.9.6.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-websocket\8.5.31\6564e716b89de5eaa0dd234ae7989576503ddf3\tomcat-embed-websocket-8.5.31.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-core\8.5.31\f5adf7ed8c34aa005b22b6a2dc7b6796e10e9c79\tomcat-embed-core-8.5.31.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-el\8.5.31\3a536e1ac71b82627c3a7408eb38fa0704cb9034\tomcat-embed-el-8.5.31.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\javax.validation\validation-api\2.0.1.Final\cb855558e6271b1b32e716d24cb85c7f583ce09e\validation-api-2.0.1.Final.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.jboss.logging\jboss-logging\3.3.2.Final\3789d00e859632e6c6206adc0c71625559e6e3b0\jboss-logging-3.3.2.Final.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\com.fasterxml\classmate\1.3.4\3d5f48f10bbe4eb7bd862f10c0583be2e0053c6\classmate-1.3.4.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\net.minidev\json-smart\2.3\7396407491352ce4fa30de92efb158adb76b5b\json-smart-2.3.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-classic\1.2.3\7c4f3c474fb2c041d8028740440937705ebb473a\logback-classic-1.2.3.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-to-slf4j\2.10.0\f7e631ccf49cfc0aefa4a2a728da7d374c05bd3c\log4j-to-slf4j-2.10.0.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.slf4j\jul-to-slf4j\1.7.25\af5364cd6679bfffb114f0dec8a157aaa283b76\jul-to-slf4j-1.7.25.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.7.25\da76ca59f6a57ee3102f8f9bd9cee742973efa8a\slf4j-api-1.7.25.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy\1.7.11\f02857a4e2c66ccbe7aaad6100a0a6c461bce9b3\byte-buddy-1.7.11.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.7.11\b425a8933ca07edd03c6dbc8bc3b595fba9780de\byte-buddy-agent-1.7.11.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.objenesis\objenesis\2.6\639033469776fd37c08358c6b92a4761feb2af4b\objenesis-2.6.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\com.vaadin.external.google\android-json\0.0.20131108.vaadin1\fa26d351fe62a6a17f5cda1287c1c6110dec413f\android-json-0.0.20131108.vaadin1.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.springframework\spring-jcl\5.0.7.RELEASE\699016ddf454c2c167d9f84ae5777eccadf54728\spring-jcl-5.0.7.RELEASE.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.9.0\7c10d545325e3a6e72e06381afe469fd40eb701\jackson-annotations-2.9.0.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.9.6\4e393793c37c77e042ccc7be5a914ae39251b365\jackson-core-2.9.6.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\net.minidev\accessors-smart\1.2\c592b500269bfde36096641b01238a8350f8aa31\accessors-smart-1.2.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-core\1.2.3\864344400c3d4d92dfeb0a305dc87d953677c03c\logback-core-1.2.3.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-api\2.10.0\fec5797a55b786184a537abd39c3fa1449d752d6\log4j-api-2.10.0.jar;C:\Users\yang\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm\5.0.4\da08b8cce7bbf903602a25a3a163ae252435795\asm-5.0.4.jar, user.name=yang, java.vm.specification.version=1.8, sun.java.command=worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 1', java.home=D:\Java\jdk1.8.0_151\jre, sun.arch.data.model=64, user.language=zh, java.specification.vendor=Oracle Corporation, awt.toolkit=sun.awt.windows.WToolkit, java.vm.info=mixed mode, java.version=1.8.0_151, java.ext.dirs=D:\Java\jdk1.8.0_151\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext, sun.boot.class.path=D:\Java\jdk1.8.0_151\jre\lib\resources.jar;D:\Java\jdk1.8.0_151\jre\lib\rt.jar;D:\Java\jdk1.8.0_151\jre\lib\sunrsasign.jar;D:\Java\jdk1.8.0_151\jre\lib\jsse.jar;D:\Java\jdk1.8.0_151\jre\lib\jce.jar;D:\Java\jdk1.8.0_151\jre\lib\charsets.jar;D:\Java\jdk1.8.0_151\jre\lib\jfr.jar;D:\Java\jdk1.8.0_151\jre\classes, java.vendor=Oracle Corporation, org.gradle.test.worker=1, file.separator=\, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, sun.io.unicode.encoding=UnicodeLittle, sun.cpu.endian=little, sun.desktop=windows, sun.cpu.isalist=amd64}}, SystemEnvironmentPropertySource@555527362 {name='systemEnvironment', properties={PATH=C:\Users\yang\bin;D:\Git\mingw64\bin;D:\Git\usr\local\bin;D:\Git\usr\bin;D:\Git\usr\bin;D:\Git\mingw64\bin;D:\Git\usr\bin;C:\Users\yang\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;D:\Java\jdk1.8.0_151\bin;D:\Java\jdk1.8.0_151\jre\bin;D:\Git\cmd;D:\apache-maven-3.6.1\bin;D:\gradle-5.4.1\bin;D:\nodejs;D:\Yarn\bin;C:\Users\yang\AppData\Local\Yarn\Data\global\node_modules\.bin;D:\Git\usr\bin\vendor_perl;D:\Git\usr\bin\core_perl, USERDOMAIN_ROAMINGPROFILE=DESKTOP-D0N6JCS, PKG_CONFIG_PATH=D:\Git\mingw64\lib\pkgconfig;D:\Git\mingw64\share\pkgconfig, MSYSTEM_PREFIX=D:/Git/mingw64, PROCESSOR_LEVEL=6, SYSTEMDRIVE=C:, CONFIG_SITE=D:/Git/mingw64/etc/config.site, SESSIONNAME=Console, ALLUSERSPROFILE=C:\ProgramData, PROCESSOR_ARCHITECTURE=AMD64, MSYSTEM_CHOST=x86_64-w64-mingw32, PS1=\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ , PSModulePath=C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules, =E:=E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376, MAVEN_HOME=D:\apache-maven-3.6.1, ORIGINAL_TEMP=C:/Users/yang/AppData/Local/Temp, PROGRAMFILES=C:\Program Files, DIRNAME=E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\, USERNAME=yang, PWD=E:/Program/TWoutline/0829/java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376, CMD_LINE_ARGS=build, ProgramFiles(x86)=C:\Program Files (x86), INFOPATH=D:\Git\usr\local\info;D:\Git\usr\share\info;D:\Git\usr\info;D:\Git\share\info, FPS_BROWSER_USER_PROFILE_STRING=Default, APP_HOME=E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\, DEFAULT_JVM_OPTS="-Xmx64m" "-Xms64m", PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC, SHELL=D:\Git\usr\bin\bash.exe, DriverData=C:\Windows\System32\Drivers\DriverData, OneDriveConsumer=C:\Users\yang\OneDrive, ORIGINAL_TMP=C:/Users/yang/AppData/Local/Temp, TMPDIR=C:\Users\yang\AppData\Local\Temp, WINDIR=C:\WINDOWS, ProgramData=C:\ProgramData, ProgramW6432=C:\Program Files, SSH_ASKPASS=D:/Git/mingw64/libexec/git-core/git-gui--askpass, HOMEPATH=\Users\yang, PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 12, GenuineIntel, PUBLIC=C:\Users\Public, MINGW_CHOST=x86_64-w64-mingw32, =::=::\, EXEPATH=D:\Git, SHLVL=1, _SKIP=2, LOCALAPPDATA=C:\Users\yang\AppData\Local, ORIGINAL_PATH=D:\Git\mingw64\bin;D:\Git\usr\bin;C:\Users\yang\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;D:\Java\jdk1.8.0_151\bin;D:\Java\jdk1.8.0_151\jre\bin;D:\Git\cmd;D:\apache-maven-3.6.1\bin;D:\gradle-5.4.1\bin;D:\nodejs;D:\Yarn\bin;C:\Users\yang\AppData\Local\Yarn\Data\global\node_modules\.bin, MANPATH=D:\Git\mingw64\local\man;D:\Git\mingw64\share\man;D:\Git\usr\local\man;D:\Git\usr\share\man;D:\Git\usr\man;D:\Git\share\man, MINGW_PACKAGE_PREFIX=mingw-w64-x86_64, USERDOMAIN=DESKTOP-D0N6JCS, FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer, LOGONSERVER=\\DESKTOP-D0N6JCS, JAVA_HOME=D:\Java\jdk1.8.0_151, PLINK_PROTOCOL=ssh, PROMPT=$P$G, TERM=xterm, LANG=zh_CN.UTF-8, GRADLE_HOME=D:\gradle-5.5.1, MINGW_PREFIX=D:/Git/mingw64, DISPLAY=needs-to-be-defined, MSYSTEM=MINGW64, OneDrive=C:\Users\yang\OneDrive, APPDATA=C:\Users\yang\AppData\Roaming, SYSTEMROOT=C:\WINDOWS, JAVA_EXE=D:\Java\jdk1.8.0_151/bin/java.exe, _=./gradlew.bat, OS=Windows_NT, COMPUTERNAME=DESKTOP-D0N6JCS, COMMONPROGRAMFILES=C:\Program Files\Common Files, COMSPEC=C:\WINDOWS\system32\cmd.exe, PROCESSOR_REVISION=8e0c, CLASSPATH=E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376\\gradle\wrapper\gradle-wrapper.jar, CommonProgramW6432=C:\Program Files\Common Files, ACLOCAL_PATH=D:\Git\mingw64\share\aclocal;D:\Git\usr\share\aclocal, APP_BASE_NAME=gradlew, MSYSTEM_CARCH=x86_64, TEMP=C:\Users\yang\AppData\Local\Temp, HOSTNAME=DESKTOP-D0N6JCS, HOMEDRIVE=C:, USERPROFILE=C:\Users\yang, TMP=C:\Users\yang\AppData\Local\Temp, CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files, NUMBER_OF_PROCESSORS=8, HOME=C:\Users\yang}}]
+09:56:29.409 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+09:56:29.409 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding PropertySource 'Inlined Test Properties' with highest search precedence
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.0.3.RELEASE)
+
+2019-08-31 09:56:29.707 DEBUG 21672 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Adding PropertySource 'servletConfigInitParams' with lowest search precedence
+2019-08-31 09:56:29.708 DEBUG 21672 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Adding PropertySource 'servletContextInitParams' with lowest search precedence
+2019-08-31 09:56:29.710 DEBUG 21672 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Adding PropertySource 'systemProperties' with lowest search precedence
+2019-08-31 09:56:29.711 DEBUG 21672 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Adding PropertySource 'systemEnvironment' with lowest search precedence
+2019-08-31 09:56:29.711 DEBUG 21672 --- [    Test worker] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [StubPropertySource {name='servletConfigInitParams'}, StubPropertySource {name='servletContextInitParams'}, MapPropertySource {name='systemProperties'}, SystemEnvironmentPropertySource {name='systemEnvironment'}]
+2019-08-31 09:56:29.740  INFO 21672 --- [    Test worker] tws.controller.EmployeeControllerTest    : Starting EmployeeControllerTest on DESKTOP-D0N6JCS with PID 21672 (started by yang in E:\Program\TWoutline\0829\java_persistence_practice_parking_lot_comprehensive-2019-8-26-2-21-50-376)
+2019-08-31 09:56:29.741  INFO 21672 --- [    Test worker] tws.controller.EmployeeControllerTest    : No active profile set, falling back to default profiles: default
+2019-08-31 09:56:29.761  INFO 21672 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@51136978: startup date [Sat Aug 31 09:56:29 CST 2019]; root of context hierarchy
+2019-08-31 09:56:29.761 DEBUG 21672 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Bean factory for org.springframework.web.context.support.GenericWebApplicationContext@51136978: org.springframework.beans.factory.support.DefaultListableBeanFactory@28ee75de: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.event.internalEventListenerProcessor,org.springframework.context.event.internalEventListenerFactory,org.springframework.boot.test.context.ImportsContextCustomizer$ImportsCleanupPostProcessor,org.springframework.boot.test.context.ImportsContextCustomizer$ImportsConfiguration,org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor,org.springframework.boot.test.mock.mockito.MockitoPostProcessor,application]; root of factory hierarchy
+2019-08-31 09:56:30.697 DEBUG 21672 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@31edc30d]
+2019-08-31 09:56:30.698 DEBUG 21672 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@5c8e81cf]
+2019-08-31 09:56:31.263  INFO 21672 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-31 09:56:31.478  INFO 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@51136978: startup date [Sat Aug 31 09:56:29 CST 2019]; root of context hierarchy
+2019-08-31 09:56:31.546 DEBUG 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking for request mappings in application context: org.springframework.web.context.support.GenericWebApplicationContext@51136978: startup date [Sat Aug 31 09:56:29 CST 2019]; root of context hierarchy
+2019-08-31 09:56:31.562 DEBUG 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 6 request handler methods found on class tws.controller.EmployeeController: {public org.springframework.http.ResponseEntity tws.controller.EmployeeController.getOneParkingBoyAllParkingLots(int)={[/employees/{id}/parkinglots],methods=[GET]}, public org.springframework.http.ResponseEntity tws.controller.EmployeeController.getAllInOnePage(java.lang.Integer,java.lang.Integer)={[/employees],methods=[GET]}, public org.springframework.http.ResponseEntity tws.controller.EmployeeController.getOne(int)={[/employees/{id}],methods=[GET]}, public org.springframework.http.ResponseEntity tws.controller.EmployeeController.createEmployee(tws.entity.Employee)={[/employees],methods=[POST]}, public org.springframework.http.ResponseEntity tws.controller.EmployeeController.updateEmployee(int,tws.entity.Employee)={[/employees/{id}],methods=[PUT]}, public void tws.controller.EmployeeController.deleteEmployee(int)={[/employees/{id}],methods=[DELETE]}}
+2019-08-31 09:56:31.563  INFO 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/employees/{id}/parkinglots],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<tws.entity.ParkingLot>> tws.controller.EmployeeController.getOneParkingBoyAllParkingLots(int)
+2019-08-31 09:56:31.565  INFO 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/employees],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<tws.entity.Employee>> tws.controller.EmployeeController.getAllInOnePage(java.lang.Integer,java.lang.Integer)
+2019-08-31 09:56:31.566  INFO 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/employees/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<tws.entity.Employee> tws.controller.EmployeeController.getOne(int)
+2019-08-31 09:56:31.567  INFO 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/employees],methods=[POST]}" onto public org.springframework.http.ResponseEntity<tws.entity.Employee> tws.controller.EmployeeController.createEmployee(tws.entity.Employee)
+2019-08-31 09:56:31.568  INFO 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/employees/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<tws.entity.Employee> tws.controller.EmployeeController.updateEmployee(int,tws.entity.Employee)
+2019-08-31 09:56:31.569  INFO 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/employees/{id}],methods=[DELETE]}" onto public void tws.controller.EmployeeController.deleteEmployee(int)
+2019-08-31 09:56:31.571 DEBUG 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 request handler methods found on class tws.controller.ParkingLotController: {public org.springframework.http.ResponseEntity tws.controller.ParkingLotController.createEmployee(tws.entity.ParkingLot)={[/parkinglots],methods=[POST]}, public org.springframework.http.ResponseEntity tws.controller.ParkingLotController.getAllList()={[/parkinglots],methods=[GET]}, public org.springframework.http.ResponseEntity tws.controller.ParkingLotController.getOneParkingLot(int)={[/parkinglots/{id}],methods=[GET]}, public org.springframework.http.ResponseEntity tws.controller.ParkingLotController.updateParkingLot(int,tws.entity.ParkingLot)={[/parkinglots/{id}],methods=[PUT]}, public void tws.controller.ParkingLotController.deleteParkingLot(int)={[/parkinglots/{id}],methods=[DELETE]}}
+2019-08-31 09:56:31.571  INFO 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/parkinglots],methods=[POST]}" onto public org.springframework.http.ResponseEntity<tws.entity.ParkingLot> tws.controller.ParkingLotController.createEmployee(tws.entity.ParkingLot)
+2019-08-31 09:56:31.572  INFO 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/parkinglots],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<tws.entity.ParkingLot>> tws.controller.ParkingLotController.getAllList()
+2019-08-31 09:56:31.573  INFO 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/parkinglots/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<tws.entity.ParkingLot> tws.controller.ParkingLotController.getOneParkingLot(int)
+2019-08-31 09:56:31.573  INFO 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/parkinglots/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<tws.entity.ParkingLot> tws.controller.ParkingLotController.updateParkingLot(int,tws.entity.ParkingLot)
+2019-08-31 09:56:31.574  INFO 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/parkinglots/{id}],methods=[DELETE]}" onto public void tws.controller.ParkingLotController.deleteParkingLot(int)
+2019-08-31 09:56:31.576 DEBUG 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 request handler methods found on class org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController: {public org.springframework.http.ResponseEntity org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)={[/error]}, public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)={[/error],produces=[text/html]}}
+2019-08-31 09:56:31.577  INFO 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-08-31 09:56:31.577  INFO 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-08-31 09:56:31.602 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Looking for URL mappings in application context: org.springframework.web.context.support.GenericWebApplicationContext@51136978: startup date [Sat Aug 31 09:56:29 CST 2019]; root of context hierarchy
+2019-08-31 09:56:31.602 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor': no URL paths identified
+2019-08-31 09:56:31.603 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor': no URL paths identified
+2019-08-31 09:56:31.603 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.internalRequiredAnnotationProcessor': no URL paths identified
+2019-08-31 09:56:31.603 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.internalCommonAnnotationProcessor': no URL paths identified
+2019-08-31 09:56:31.603 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.event.internalEventListenerProcessor': no URL paths identified
+2019-08-31 09:56:31.603 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.event.internalEventListenerFactory': no URL paths identified
+2019-08-31 09:56:31.603 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.test.context.ImportsContextCustomizer$ImportsCleanupPostProcessor': no URL paths identified
+2019-08-31 09:56:31.603 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor': no URL paths identified
+2019-08-31 09:56:31.603 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor': no URL paths identified
+2019-08-31 09:56:31.604 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'application': no URL paths identified
+2019-08-31 09:56:31.604 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory': no URL paths identified
+2019-08-31 09:56:31.604 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'employeeController': no URL paths identified
+2019-08-31 09:56:31.604 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'parkingLotController': no URL paths identified
+2019-08-31 09:56:31.604 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'employeeService': no URL paths identified
+2019-08-31 09:56:31.604 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'parkingLotService': no URL paths identified
+2019-08-31 09:56:31.604 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.AutoConfigurationPackages': no URL paths identified
+2019-08-31 09:56:31.605 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.605 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry': no URL paths identified
+2019-08-31 09:56:31.605 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'propertySourcesPlaceholderConfigurer': no URL paths identified
+2019-08-31 09:56:31.605 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration$TomcatWebSocketConfiguration': no URL paths identified
+2019-08-31 09:56:31.605 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'websocketContainerCustomizer': no URL paths identified
+2019-08-31 09:56:31.605 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.606 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryConfiguration$EmbeddedTomcat': no URL paths identified
+2019-08-31 09:56:31.606 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'tomcatServletWebServerFactory': no URL paths identified
+2019-08-31 09:56:31.606 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.606 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'servletWebServerFactoryCustomizer': no URL paths identified
+2019-08-31 09:56:31.606 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'tomcatServletWebServerFactoryCustomizer': no URL paths identified
+2019-08-31 09:56:31.606 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'server-org.springframework.boot.autoconfigure.web.ServerProperties': no URL paths identified
+2019-08-31 09:56:31.606 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor': no URL paths identified
+2019-08-31 09:56:31.606 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata': no URL paths identified
+2019-08-31 09:56:31.606 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'webServerFactoryCustomizerBeanPostProcessor': no URL paths identified
+2019-08-31 09:56:31.607 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'errorPageRegistrarBeanPostProcessor': no URL paths identified
+2019-08-31 09:56:31.607 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletConfiguration': no URL paths identified
+2019-08-31 09:56:31.607 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dispatcherServlet': no URL paths identified
+2019-08-31 09:56:31.607 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mainDispatcherServletPathProvider': no URL paths identified
+2019-08-31 09:56:31.607 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties': no URL paths identified
+2019-08-31 09:56:31.607 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration': no URL paths identified
+2019-08-31 09:56:31.607 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dispatcherServletRegistration': no URL paths identified
+2019-08-31 09:56:31.608 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.608 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.608 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'defaultValidator': no URL paths identified
+2019-08-31 09:56:31.608 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'methodValidationPostProcessor': no URL paths identified
+2019-08-31 09:56:31.608 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration': no URL paths identified
+2019-08-31 09:56:31.608 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'error': no URL paths identified
+2019-08-31 09:56:31.608 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'beanNameViewResolver': no URL paths identified
+2019-08-31 09:56:31.609 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration': no URL paths identified
+2019-08-31 09:56:31.609 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'conventionErrorViewResolver': no URL paths identified
+2019-08-31 09:56:31.609 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.609 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'errorAttributes': no URL paths identified
+2019-08-31 09:56:31.609 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'basicErrorController': no URL paths identified
+2019-08-31 09:56:31.609 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'errorPageCustomizer': no URL paths identified
+2019-08-31 09:56:31.609 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'preserveErrorControllerTargetClassPostProcessor': no URL paths identified
+2019-08-31 09:56:31.609 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties': no URL paths identified
+2019-08-31 09:56:31.609 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration': no URL paths identified
+2019-08-31 09:56:31.610 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'faviconHandlerMapping': no URL paths identified
+2019-08-31 09:56:31.610 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'faviconRequestHandler': no URL paths identified
+2019-08-31 09:56:31.610 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration': no URL paths identified
+2019-08-31 09:56:31.610 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'requestMappingHandlerAdapter': no URL paths identified
+2019-08-31 09:56:31.610 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'requestMappingHandlerMapping': no URL paths identified
+2019-08-31 09:56:31.610 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcConversionService': no URL paths identified
+2019-08-31 09:56:31.611 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcValidator': no URL paths identified
+2019-08-31 09:56:31.611 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcContentNegotiationManager': no URL paths identified
+2019-08-31 09:56:31.611 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcPathMatcher': no URL paths identified
+2019-08-31 09:56:31.611 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcUrlPathHelper': no URL paths identified
+2019-08-31 09:56:31.611 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'viewControllerHandlerMapping': no URL paths identified
+2019-08-31 09:56:31.611 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'beanNameHandlerMapping': no URL paths identified
+2019-08-31 09:56:31.611 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'resourceHandlerMapping': no URL paths identified
+2019-08-31 09:56:31.611 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcResourceUrlProvider': no URL paths identified
+2019-08-31 09:56:31.611 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'defaultServletHandlerMapping': no URL paths identified
+2019-08-31 09:56:31.611 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcUriComponentsContributor': no URL paths identified
+2019-08-31 09:56:31.612 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'httpRequestHandlerAdapter': no URL paths identified
+2019-08-31 09:56:31.612 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'simpleControllerHandlerAdapter': no URL paths identified
+2019-08-31 09:56:31.612 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'handlerExceptionResolver': no URL paths identified
+2019-08-31 09:56:31.612 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcViewResolver': no URL paths identified
+2019-08-31 09:56:31.612 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcHandlerMappingIntrospector': no URL paths identified
+2019-08-31 09:56:31.612 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter': no URL paths identified
+2019-08-31 09:56:31.612 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'defaultViewResolver': no URL paths identified
+2019-08-31 09:56:31.612 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'viewResolver': no URL paths identified
+2019-08-31 09:56:31.613 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'welcomePageHandlerMapping': no URL paths identified
+2019-08-31 09:56:31.613 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'requestContextFilter': no URL paths identified
+2019-08-31 09:56:31.613 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.613 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'hiddenHttpMethodFilter': no URL paths identified
+2019-08-31 09:56:31.613 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'httpPutFormContentFilter': no URL paths identified
+2019-08-31 09:56:31.613 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari': no URL paths identified
+2019-08-31 09:56:31.613 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dataSource': no URL paths identified
+2019-08-31 09:56:31.613 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration': no URL paths identified
+2019-08-31 09:56:31.613 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration': no URL paths identified
+2019-08-31 09:56:31.614 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'hikariPoolDataSourceMetadataProvider': no URL paths identified
+2019-08-31 09:56:31.614 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration': no URL paths identified
+2019-08-31 09:56:31.614 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': no URL paths identified
+2019-08-31 09:56:31.614 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializationConfiguration': no URL paths identified
+2019-08-31 09:56:31.614 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dataSourceInitializerPostProcessor': no URL paths identified
+2019-08-31 09:56:31.614 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.614 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties': no URL paths identified
+2019-08-31 09:56:31.614 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.mybatis.spring.boot.autoconfigure.MybatisLanguageDriverAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.614 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$MapperScannerRegistrarNotFoundConfiguration': no URL paths identified
+2019-08-31 09:56:31.615 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.mybatis.spring.mapper.MapperScannerConfigurer': no URL paths identified
+2019-08-31 09:56:31.615 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.615 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'sqlSessionFactory': no URL paths identified
+2019-08-31 09:56:31.615 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'sqlSessionTemplate': no URL paths identified
+2019-08-31 09:56:31.615 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties': no URL paths identified
+2019-08-31 09:56:31.615 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.615 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.615 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'persistenceExceptionTranslationPostProcessor': no URL paths identified
+2019-08-31 09:56:31.616 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration$FlywayConfiguration': no URL paths identified
+2019-08-31 09:56:31.616 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'flyway': no URL paths identified
+2019-08-31 09:56:31.616 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'flywayInitializer': no URL paths identified
+2019-08-31 09:56:31.616 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.flyway-org.springframework.boot.autoconfigure.flyway.FlywayProperties': no URL paths identified
+2019-08-31 09:56:31.616 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.616 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'stringOrNumberMigrationVersionConverter': no URL paths identified
+2019-08-31 09:56:31.616 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'flywayDefaultDdlModeProvider': no URL paths identified
+2019-08-31 09:56:31.616 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.616 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'h2Console': no URL paths identified
+2019-08-31 09:56:31.617 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.h2.console-org.springframework.boot.autoconfigure.h2.H2ConsoleProperties': no URL paths identified
+2019-08-31 09:56:31.617 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration': no URL paths identified
+2019-08-31 09:56:31.617 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'standardJacksonObjectMapperBuilderCustomizer': no URL paths identified
+2019-08-31 09:56:31.617 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties': no URL paths identified
+2019-08-31 09:56:31.617 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration': no URL paths identified
+2019-08-31 09:56:31.617 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jacksonObjectMapperBuilder': no URL paths identified
+2019-08-31 09:56:31.617 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration': no URL paths identified
+2019-08-31 09:56:31.617 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'parameterNamesModule': no URL paths identified
+2019-08-31 09:56:31.617 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration': no URL paths identified
+2019-08-31 09:56:31.617 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jacksonObjectMapper': no URL paths identified
+2019-08-31 09:56:31.617 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.618 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jsonComponentModule': no URL paths identified
+2019-08-31 09:56:31.618 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration': no URL paths identified
+2019-08-31 09:56:31.618 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'stringHttpMessageConverter': no URL paths identified
+2019-08-31 09:56:31.618 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.http.encoding-org.springframework.boot.autoconfigure.http.HttpEncodingProperties': no URL paths identified
+2019-08-31 09:56:31.618 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration$MappingJackson2HttpMessageConverterConfiguration': no URL paths identified
+2019-08-31 09:56:31.618 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mappingJackson2HttpMessageConverter': no URL paths identified
+2019-08-31 09:56:31.618 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration': no URL paths identified
+2019-08-31 09:56:31.618 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.618 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'messageConverters': no URL paths identified
+2019-08-31 09:56:31.618 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.http.codec.CodecsAutoConfiguration$JacksonCodecConfiguration': no URL paths identified
+2019-08-31 09:56:31.618 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jacksonCodecCustomizer': no URL paths identified
+2019-08-31 09:56:31.619 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.http.codec.CodecsAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.619 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.619 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties': no URL paths identified
+2019-08-31 09:56:31.619 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration$JdbcTemplateConfiguration': no URL paths identified
+2019-08-31 09:56:31.619 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jdbcTemplate': no URL paths identified
+2019-08-31 09:56:31.619 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration$NamedParameterJdbcTemplateConfiguration': no URL paths identified
+2019-08-31 09:56:31.619 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'namedParameterJdbcTemplate': no URL paths identified
+2019-08-31 09:56:31.619 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.619 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.jdbc-org.springframework.boot.autoconfigure.jdbc.JdbcProperties': no URL paths identified
+2019-08-31 09:56:31.619 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.security.reactive.ReactiveSecurityAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.619 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.security-org.springframework.boot.autoconfigure.security.SecurityProperties': no URL paths identified
+2019-08-31 09:56:31.620 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration': no URL paths identified
+2019-08-31 09:56:31.620 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'transactionManager': no URL paths identified
+2019-08-31 09:56:31.620 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.620 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': no URL paths identified
+2019-08-31 09:56:31.620 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.transaction.config.internalTransactionAdvisor': no URL paths identified
+2019-08-31 09:56:31.620 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'transactionAttributeSource': no URL paths identified
+2019-08-31 09:56:31.620 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'transactionInterceptor': no URL paths identified
+2019-08-31 09:56:31.620 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.transaction.config.internalTransactionalEventListenerFactory': no URL paths identified
+2019-08-31 09:56:31.620 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$EnableTransactionManagementConfiguration$CglibAutoProxyConfiguration': no URL paths identified
+2019-08-31 09:56:31.621 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.aop.config.internalAutoProxyCreator': no URL paths identified
+2019-08-31 09:56:31.621 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$EnableTransactionManagementConfiguration': no URL paths identified
+2019-08-31 09:56:31.621 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$TransactionTemplateConfiguration': no URL paths identified
+2019-08-31 09:56:31.621 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'transactionTemplate': no URL paths identified
+2019-08-31 09:56:31.621 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.621 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'platformTransactionManagerCustomizers': no URL paths identified
+2019-08-31 09:56:31.622 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties': no URL paths identified
+2019-08-31 09:56:31.622 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.622 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'restTemplateBuilder': no URL paths identified
+2019-08-31 09:56:31.622 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration$TomcatWebServerFactoryCustomizerConfiguration': no URL paths identified
+2019-08-31 09:56:31.622 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'tomcatWebServerFactoryCustomizer': no URL paths identified
+2019-08-31 09:56:31.622 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.622 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.622 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'characterEncodingFilter': no URL paths identified
+2019-08-31 09:56:31.623 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'localeCharsetMappingsCustomizer': no URL paths identified
+2019-08-31 09:56:31.623 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.623 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'multipartConfigElement': no URL paths identified
+2019-08-31 09:56:31.623 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'multipartResolver': no URL paths identified
+2019-08-31 09:56:31.623 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties': no URL paths identified
+2019-08-31 09:56:31.623 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.623 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mockMvcBuilder': no URL paths identified
+2019-08-31 09:56:31.624 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springBootMockMvcBuilderCustomizer': no URL paths identified
+2019-08-31 09:56:31.624 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mockMvc': no URL paths identified
+2019-08-31 09:56:31.624 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityAutoConfiguration': no URL paths identified
+2019-08-31 09:56:31.624 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'employeeMapper': no URL paths identified
+2019-08-31 09:56:31.624 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'parkingLotMapper': no URL paths identified
+2019-08-31 09:56:31.624 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'autoConfigurationReport': no URL paths identified
+2019-08-31 09:56:31.624 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.context.ContextIdApplicationContextInitializer$ContextId': no URL paths identified
+2019-08-31 09:56:31.624 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer$PropertyMappingCheckBeanPostProcessor': no URL paths identified
+2019-08-31 09:56:31.624 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.test.context.filter.TestTypeExcludeFilter': no URL paths identified
+2019-08-31 09:56:31.624 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springApplicationArguments': no URL paths identified
+2019-08-31 09:56:31.625 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springBootBanner': no URL paths identified
+2019-08-31 09:56:31.625 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springBootLoggingSystem': no URL paths identified
+2019-08-31 09:56:31.625 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'environment': no URL paths identified
+2019-08-31 09:56:31.625 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'systemProperties': no URL paths identified
+2019-08-31 09:56:31.625 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'systemEnvironment': no URL paths identified
+2019-08-31 09:56:31.625 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'servletContext': no URL paths identified
+2019-08-31 09:56:31.625 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'contextParameters': no URL paths identified
+2019-08-31 09:56:31.625 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'contextAttributes': no URL paths identified
+2019-08-31 09:56:31.625 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry': no URL paths identified
+2019-08-31 09:56:31.625 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.test.mock.mockito.MockitoBeans': no URL paths identified
+2019-08-31 09:56:31.625 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'messageSource': no URL paths identified
+2019-08-31 09:56:31.625 DEBUG 21672 --- [    Test worker] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'applicationEventMulticaster': no URL paths identified
+2019-08-31 09:56:31.634  INFO 21672 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-31 09:56:31.634  INFO 21672 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-31 09:56:31.646 DEBUG 21672 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Looking for exception mappings: org.springframework.web.context.support.GenericWebApplicationContext@51136978: startup date [Sat Aug 31 09:56:29 CST 2019]; root of context hierarchy
+2019-08-31 09:56:31.776  INFO 21672 --- [    Test worker] o.f.core.internal.util.VersionPrinter    : Flyway Community Edition 5.0.7 by Boxfuse
+2019-08-31 09:56:31.784  INFO 21672 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-31 09:56:31.941  INFO 21672 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-08-31 09:56:31.946  INFO 21672 --- [    Test worker] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:tws_persistence_db (H2 1.4)
+2019-08-31 09:56:32.022  INFO 21672 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.026s)
+2019-08-31 09:56:32.047  INFO 21672 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table: "PUBLIC"."flyway_schema_history"
+2019-08-31 09:56:32.083  INFO 21672 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2019-08-31 09:56:32.085  INFO 21672 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1 - create tables employee and parkinglot
+2019-08-31 09:56:32.104  INFO 21672 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 2 - add some data
+2019-08-31 09:56:32.116  INFO 21672 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema "PUBLIC" (execution time 00:00.075s)
+2019-08-31 09:56:32.302  INFO 21672 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2019-08-31 09:56:32.303  INFO 21672 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2019-08-31 09:56:32.320  INFO 21672 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 17 ms
+2019-08-31 09:56:32.343 DEBUG 21672 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@1c8c2555]
+2019-08-31 09:56:32.351 DEBUG 21672 --- [    Test worker] o.s.w.s.resource.ResourceUrlProvider     : Looking for resource handler mappings
+2019-08-31 09:56:32.352 DEBUG 21672 --- [    Test worker] o.s.w.s.resource.ResourceUrlProvider     : Found resource handler mapping: URL pattern="/**/favicon.ico", locations=[class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], ServletContext resource [/], class path resource []], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@39f4e8d1]
+2019-08-31 09:56:32.352 DEBUG 21672 --- [    Test worker] o.s.w.s.resource.ResourceUrlProvider     : Found resource handler mapping: URL pattern="/webjars/**", locations=[class path resource [META-INF/resources/webjars/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@255b16a]
+2019-08-31 09:56:32.352 DEBUG 21672 --- [    Test worker] o.s.w.s.resource.ResourceUrlProvider     : Found resource handler mapping: URL pattern="/**", locations=[class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@56dd74d3]
+2019-08-31 09:56:32.357  INFO 21672 --- [    Test worker] tws.controller.EmployeeControllerTest    : Started EmployeeControllerTest in 2.939 seconds (JVM running for 3.948)
+2019-08-31 09:56:32.465  INFO 21672 --- [    Test worker] o.s.test.jdbc.JdbcTestUtils              : Deleted 2 rows from table employee
+2019-08-31 09:56:32.544 DEBUG 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /employees
+2019-08-31 09:56:32.546 DEBUG 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public org.springframework.http.ResponseEntity<java.util.List<tws.entity.Employee>> tws.controller.EmployeeController.getAllInOnePage(java.lang.Integer,java.lang.Integer)]
+2019-08-31 09:56:32.604 DEBUG 21672 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Written [[tws.entity.Employee@1e2a4f67, tws.entity.Employee@47dc2151]] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@3543bbe6]
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /employees
+       Parameters = {pageNum=[2], pageSize=[2]}
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+             Body = [{"id":3,"name":"yang","age":"21"},{"id":4,"name":"zeqi","age":"25"}]
+    Session Attrs = {}
+
+Handler:
+             Type = tws.controller.EmployeeController
+           Method = public org.springframework.http.ResponseEntity<java.util.List<tws.entity.Employee>> tws.controller.EmployeeController.getAllInOnePage(java.lang.Integer,java.lang.Integer)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+     Content type = application/json;charset=UTF-8
+             Body = [{"id":3,"name":"yang","age":"21"},{"id":4,"name":"zeqi","age":"25"}]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2019-08-31 09:56:32.631  INFO 21672 --- [    Test worker] o.s.test.jdbc.JdbcTestUtils              : Deleted 4 rows from table employee
+2019-08-31 09:56:32.632 DEBUG 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /employees/4
+2019-08-31 09:56:32.634 DEBUG 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public org.springframework.http.ResponseEntity<tws.entity.Employee> tws.controller.EmployeeController.updateEmployee(int,tws.entity.Employee)]
+2019-08-31 09:56:32.660 DEBUG 21672 --- [    Test worker] m.m.a.RequestResponseBodyMethodProcessor : Read [class tws.entity.Employee] as "application/json;charset=UTF-8" with [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@3543bbe6]
+2019-08-31 09:56:32.674 DEBUG 21672 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Written [tws.entity.Employee@5dc79e7f] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@3543bbe6]
+
+MockHttpServletRequest:
+      HTTP Method = PUT
+      Request URI = /employees/4
+       Parameters = {}
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+             Body = {"id":4,"name":"aaa","age":"33"}
+    Session Attrs = {}
+
+Handler:
+             Type = tws.controller.EmployeeController
+           Method = public org.springframework.http.ResponseEntity<tws.entity.Employee> tws.controller.EmployeeController.updateEmployee(int,tws.entity.Employee)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+     Content type = application/json;charset=UTF-8
+             Body = {"id":4,"name":"aaa","age":"33"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2019-08-31 09:56:32.680  INFO 21672 --- [    Test worker] o.s.test.jdbc.JdbcTestUtils              : Deleted 0 rows from table employee
+2019-08-31 09:56:32.681 DEBUG 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /employee
+2019-08-31 09:56:32.682 DEBUG 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Did not find handler method for [/employee]
+2019-08-31 09:56:32.682 DEBUG 21672 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Matching patterns for request [/employee] are [/**]
+2019-08-31 09:56:32.683 DEBUG 21672 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : URI Template variables for request [/employee] are {}
+2019-08-31 09:56:32.683 DEBUG 21672 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapping [/employee] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@56dd74d3]]] and 1 interceptor
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /employee
+       Parameters = {}
+          Headers = {}
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = org.springframework.web.servlet.resource.ResourceHttpRequestHandler
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 404
+    Error message = null
+          Headers = {}
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2019-08-31 09:56:32.692  INFO 21672 --- [    Test worker] o.s.test.jdbc.JdbcTestUtils              : Deleted 0 rows from table employee
+2019-08-31 09:56:32.693 DEBUG 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /employees
+2019-08-31 09:56:32.693 DEBUG 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public org.springframework.http.ResponseEntity<tws.entity.Employee> tws.controller.EmployeeController.createEmployee(tws.entity.Employee)]
+2019-08-31 09:56:32.693 DEBUG 21672 --- [    Test worker] m.m.a.RequestResponseBodyMethodProcessor : Read [class tws.entity.Employee] as "application/json;charset=UTF-8" with [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@3543bbe6]
+2019-08-31 09:56:32.695 DEBUG 21672 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Written [tws.entity.Employee@4a48b537] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@3543bbe6]
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /employees
+       Parameters = {}
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+             Body = {"id":4,"name":"aaa","age":"33"}
+    Session Attrs = {}
+
+Handler:
+             Type = tws.controller.EmployeeController
+           Method = public org.springframework.http.ResponseEntity<tws.entity.Employee> tws.controller.EmployeeController.createEmployee(tws.entity.Employee)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = {Location=[/employees/4], Content-Type=[application/json;charset=UTF-8]}
+     Content type = application/json;charset=UTF-8
+             Body = {"id":4,"name":"aaa","age":"33"}
+    Forwarded URL = null
+   Redirected URL = /employees/4
+          Cookies = []
+2019-08-31 09:56:32.702  INFO 21672 --- [    Test worker] o.s.test.jdbc.JdbcTestUtils              : Deleted 1 rows from table employee
+2019-08-31 09:56:32.703 DEBUG 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /employees
+2019-08-31 09:56:32.704 DEBUG 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public org.springframework.http.ResponseEntity<java.util.List<tws.entity.Employee>> tws.controller.EmployeeController.getAllInOnePage(java.lang.Integer,java.lang.Integer)]
+2019-08-31 09:56:32.705 DEBUG 21672 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Written [[tws.entity.Employee@280aa734, tws.entity.Employee@431813e5]] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@3543bbe6]
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /employees
+       Parameters = {}
+          Headers = {}
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tws.controller.EmployeeController
+           Method = public org.springframework.http.ResponseEntity<java.util.List<tws.entity.Employee>> tws.controller.EmployeeController.getAllInOnePage(java.lang.Integer,java.lang.Integer)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+     Content type = application/json;charset=UTF-8
+             Body = [{"id":1,"name":"yang","age":"21"},{"id":2,"name":"zeqi","age":"25"}]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2019-08-31 09:56:32.711  INFO 21672 --- [    Test worker] o.s.test.jdbc.JdbcTestUtils              : Deleted 2 rows from table employee
+2019-08-31 09:56:32.712 DEBUG 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /employees/2
+2019-08-31 09:56:32.713 DEBUG 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public void tws.controller.EmployeeController.deleteEmployee(int)]
+
+MockHttpServletRequest:
+      HTTP Method = DELETE
+      Request URI = /employees/2
+       Parameters = {}
+          Headers = {}
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tws.controller.EmployeeController
+           Method = public void tws.controller.EmployeeController.deleteEmployee(int)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {}
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2019-08-31 09:56:32.719  INFO 21672 --- [    Test worker] o.s.test.jdbc.JdbcTestUtils              : Deleted 0 rows from table employee
+2019-08-31 09:56:32.720 DEBUG 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /employees/
+2019-08-31 09:56:32.722 DEBUG 21672 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : Resolving exception from handler [null]: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'DELETE' not supported
+2019-08-31 09:56:32.722 DEBUG 21672 --- [    Test worker] .w.s.m.a.ResponseStatusExceptionResolver : Resolving exception from handler [null]: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'DELETE' not supported
+2019-08-31 09:56:32.723 DEBUG 21672 --- [    Test worker] .w.s.m.s.DefaultHandlerExceptionResolver : Resolving exception from handler [null]: org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'DELETE' not supported
+2019-08-31 09:56:32.723  WARN 21672 --- [    Test worker] o.s.web.servlet.PageNotFound             : Request method 'DELETE' not supported
+
+MockHttpServletRequest:
+      HTTP Method = DELETE
+      Request URI = /employees/
+       Parameters = {}
+          Headers = {}
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = null
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = org.springframework.web.HttpRequestMethodNotSupportedException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 405
+    Error message = Request method 'DELETE' not supported
+          Headers = {Allow=[GET, POST]}
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2019-08-31 09:56:32.731  INFO 21672 --- [    Test worker] o.s.test.jdbc.JdbcTestUtils              : Deleted 0 rows from table employee
+2019-08-31 09:56:32.732 DEBUG 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking up handler method for path /employees/2
+2019-08-31 09:56:32.733 DEBUG 21672 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Returning handler method [public org.springframework.http.ResponseEntity<tws.entity.Employee> tws.controller.EmployeeController.getOne(int)]
+2019-08-31 09:56:32.735 DEBUG 21672 --- [    Test worker] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Written [tws.entity.Employee@45f685e4] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@3543bbe6]
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /employees/2
+       Parameters = {}
+          Headers = {}
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = tws.controller.EmployeeController
+           Method = public org.springframework.http.ResponseEntity<tws.entity.Employee> tws.controller.EmployeeController.getOne(int)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+     Content type = application/json;charset=UTF-8
+             Body = {"id":2,"name":"zeqi","age":"25"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
